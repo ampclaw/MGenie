@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapter 1: Scrum Standup Meetings - MGenie Guide</title>
+<style>
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	background: #0d1117;
+	color: #c9d1d9;
+	display: flex;
+	min-height: 100vh;
+}
+#sidebar {
+	width: 280px;
+	min-width: 280px;
+	background: #1a1a2e;
+	padding: 24px 0;
+	position: fixed;
+	top: 0; left: 0;
+	height: 100vh;
+	overflow-y: auto;
+	z-index: 100;
+	box-shadow: 2px 0 8px rgba(0,0,0,.5);
+	font-family: system-ui, sans-serif;
+}
+#sidebar h2 {
+	color: #e6edf3;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	padding: 0 24px 16px;
+	border-bottom: 1px solid #30363d;
+	margin: 0 0 8px;
+}
+#sidebar a {
+	display: block;
+	padding: 9px 24px;
+	color: #c9d1d9;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 1.5;
+	transition: all .15s;
+}
+#sidebar a:hover { background: rgba(255,255,255,.06); color: #fff; }
+#sidebar a.active {
+	background: #0d1117;
+	color: #58a6ff;
+	border-left: 3px solid #58a6ff;
+	padding-left: 21px;
+	font-weight: 600;
+}
+.chapter-num { font-size: 10px; color: #6e7681; margin-right: 5px; }
+#content { margin-left: 280px; padding: 48px 64px; max-width: 860px; line-height: 1.8; }
+h1 { color: #e6edf3; font-size: 2rem; border-bottom: 2px solid #30363d; padding-bottom: 12px; margin-top: 0; }
+h2 { color: #e6edf3; font-size: 1.4rem; margin-top: 40px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+h3 { color: #e6edf3; font-size: 1.1rem; margin-top: 28px; }
+h4, h5 { color: #e6edf3; margin-top: 20px; }
+a { color: #58a6ff; }
+p { margin: 0 0 16px; }
+code { background: #161b22; color: #79c0ff; padding: 2px 7px; border-radius: 4px; font-family: "SF Mono",Monaco,Consolas,monospace; font-size: .87em; }
+pre { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px 24px; overflow-x: auto; margin: 20px 0; }
+pre code { background: none; padding: 0; color: #e6edf3; font-size: .84em; white-space: pre; }
+blockquote { border-left: 4px solid #3fb950; margin: 20px 0; padding: 12px 20px; background: rgba(63,185,80,.06); border-radius: 0 6px 6px 0; }
+table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: .92em; }
+th { background: #161b22; color: #e6edf3; padding: 10px 16px; text-align: left; border: 1px solid #30363d; font-weight: 600; }
+td { padding: 9px 16px; border: 1px solid #30363d; }
+tr:nth-child(even) { background: rgba(255,255,255,.025); }
+hr { border: none; border-top: 1px solid #30363d; margin: 32px 0; }
+ul, ol { padding-left: 24px; margin: 0 0 16px; }
+li { margin-bottom: 6px; }
+.nav-footer { display: flex; justify-content: space-between; margin-top: 64px; padding-top: 24px; border-top: 1px solid #30363d; }
+.nav-footer a { background: #161b22; color: #79c0ff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: .9em; border: 1px solid #30363d; }
+.nav-footer a:hover { background: #0d1117; border-color: #58a6ff; }
+@media (max-width: 768px) { #sidebar { display: none; } #content { margin-left: 0; padding: 24px; } }
+</style>
+</head>
+<body>
+<div id="sidebar">
+	<h2>MGenie User Guide</h2>
+		<a href="00-introduction.html" class=""><span class="chapter-num">00</span> MGenie User Guide</a>
+		<a href="01-scrum-standup.html" class="active"><span class="chapter-num">01</span> Chapter 1: Scrum Standup Meetings</a>
+		<a href="02-team-meetings.html" class=""><span class="chapter-num">02</span> Chapter 2: Team Meetings</a>
+		<a href="03-presentations.html" class=""><span class="chapter-num">03</span> Chapter 3: Presentations</a>
+		<a href="04-discussions.html" class=""><span class="chapter-num">04</span> Chapter 4: Discussions</a>
+		<a href="05-interviews.html" class=""><span class="chapter-num">05</span> Chapter 5: Interviews</a>
+		<a href="06-knowledge-base.html" class=""><span class="chapter-num">06</span> Chapter 6: Knowledge Base Building</a>
+</div>
+<main id="content">
+<h1>Chapter 1: Scrum Standup Meetings</h1>
+<h2>Overview</h2>
+<p>The daily Scrum standup is one of the most commonly held meetings in modern software teams. At its best, it is a focused 15-minute sync where each team member answers three questions:</p>
+<ol>
+<li>What did I complete yesterday?</li>
+<li>What will I work on today?</li>
+<li>Is anything blocking my progress?</li>
+</ol>
+<p>In practice, standups frequently run over time, team members forget key points under pressure, and the format degrades into status reporting rather than a collaborative sync. MGenie addresses all of these pain points.</p>
+<hr />
+<h2>Pain Points Without a Teleprompter</h2>
+<p>Even experienced engineers and managers struggle with standups in certain situations:</p>
+<ul>
+<li><strong>Forgetting to mention blockers</strong>: Under time pressure, important blockers get omitted and only surface hours later.</li>
+<li><strong>Rambling on completed work</strong>: Without a script, it is easy to over-explain what you did, consuming time that belongs to teammates.</li>
+<li><strong>Skipping the format</strong>: When tired or distracted, team members drift from the Yesterday/Today/Blockers format, making the standup harder to follow.</li>
+<li><strong>Losing your place remotely</strong>: On video calls, distractions from notifications or chat make it easy to lose track of what you planned to say.</li>
+<li><strong>Going over time</strong>: A 15-minute standup that runs to 30 minutes erodes team morale and signals poor discipline.</li>
+</ul>
+<p>MGenie provides a pre-written script that keeps you on track, a timer that shows elapsed time, and optional voice activation that advances the prompter as you speak.</p>
+<hr />
+<h2>How MGenie Helps</h2>
+<h3>Pre-Written Script</h3>
+<p>Write your standup script the night before or at the start of each day. Keep it to three clear sections. The script sits at the top of your screen, visible only to you, while your team sees your face and your shared screen.</p>
+<h3>Voice Activation Scroll</h3>
+<p>With voice activation enabled, the prompter advances automatically as you speak. You do not need to interact with the keyboard or mouse during the standup. Just talk, and the script follows.</p>
+<h3>TTS for Dry Runs</h3>
+<p>Use the TTS (Text-to-Speech) feature to rehearse your standup before the call. Play back your script and listen for anything that sounds unclear, too long, or missing. Adjust and replay until the timing is right.</p>
+<h3>Session Timer</h3>
+<p>The elapsed time display in the top-right of the prompter window keeps you aware of how long you have been speaking. Aim to finish your portion in under two minutes.</p>
+<h3>AI Summary After the Meeting</h3>
+<p>If you record your standup (useful for async teams or retrospectives), the AI Summary button generates a clean summary of what was discussed. This can be exported directly to your Knowledge Base for future reference.</p>
+<hr />
+<h2>Standup Workflow Diagram</h2>
+<pre><code>+--------------------------------------------------------------+
+| STANDUP WORKFLOW |
++----------------+----------------+----------------+----------+
+| PREPARE | DURING | AFTER | KNOWLEDGE|
+| | | | |
+| 1. Write | 4. Open | 7. Review | 8. Export|
+| script in | MGenie | recording | to KB |
+| Settings | | if enabled | |
+| | 5. Speak and | | |
+| 2. Set voice | follow the | | |
+| activation | prompter | | |
+| | | | |
+| 3. Test with | 6. AI Summary | | |
+| TTS | after call | | |
++----------------+----------------+----------------+----------+
+</code></pre>
+<hr />
+<h2>Step-by-Step Setup Guide</h2>
+<h3>Before the Standup</h3>
+<p><strong>Step 1 - Write your script</strong></p>
+<p>Open <strong>Settings &gt; Script</strong> and type your standup for today. Use the three-section format:</p>
+<ul>
+<li>Yesterday: what you completed</li>
+<li>Today: what you plan to work on</li>
+<li>Blockers: anything blocking your progress (or "No blockers")</li>
+</ul>
+<p>Keep each section to two or three sentences maximum. A good standup script is under 150 words.</p>
+<p><strong>Step 2 - Set scroll speed</strong></p>
+<p>Open <strong>Settings &gt; Behavior</strong> and adjust the scroll speed. For a standup, a medium speed works well. You can also leave voice activation on and let the prompter follow your speech automatically.</p>
+<p><strong>Step 3 - Set font size</strong></p>
+<p>Open <strong>Settings &gt; Appearance</strong> and increase the font size until you can read it comfortably from your normal sitting distance. For most monitors, 28-32pt works well for standups.</p>
+<p><strong>Step 4 - Enable voice activation (optional)</strong></p>
+<p>In <strong>Settings &gt; Behavior</strong>, enable voice activation and set the threshold. Start with a moderate threshold and adjust if the scroll triggers from background noise.</p>
+<p><strong>Step 5 - Do a TTS rehearsal</strong></p>
+<p>Press the TTS button in the control panel. Listen to your standup read back. Check that it sounds natural and fits within your two-minute target. Adjust wording if needed.</p>
+<p><strong>Step 6 - Start the call</strong></p>
+<p>Join your standup call. The prompter window sits at the top of your screen, invisible to screen sharing. When it is your turn, start speaking and follow the script.</p>
+<p><strong>Step 7 - Reset for tomorrow</strong></p>
+<p>After the standup, reset the script position with the Reset button. Update the script for the next day while the details are fresh. If you recorded the session, run AI Summary and export to your Knowledge Base.</p>
+<hr />
+<h2>Example Standup Script Template</h2>
+<p>Copy and customize this template in <strong>Settings &gt; Script</strong>:</p>
+<pre><code>[YESTERDAY]
+
+Yesterday I completed the API authentication refactor and opened
+a pull request for review. I also attended the sprint planning
+for Q3 and updated my tickets in Jira.
+
+[TODAY]
+
+Today I am focusing on the unit tests for the new auth module.
+I also want to review the open PR from Alex and give feedback
+before end of day.
+
+[BLOCKERS]
+
+I have a question about the expected behavior of the token
+refresh flow. I will reach out to the backend team after
+standup to get clarification.
+</code></pre>
+<p>For teams with no blockers most days, you can simplify:</p>
+<pre><code>[YESTERDAY]
+Completed: PR review for issue 234, documentation updates.
+
+[TODAY]
+Focus: Integration tests, deployment pipeline fix.
+
+[BLOCKERS]
+None today.
+</code></pre>
+<hr />
+<h2>Voice Activation Configuration</h2>
+<p>Voice activation is the most powerful feature for standups because it removes all manual interaction.</p>
+<p><strong>How it works</strong>: The audio monitor detects when you are speaking above a configurable threshold level. When sound is detected, the prompter begins scrolling. When you pause for more than a short duration, scrolling stops.</p>
+<p><strong>Threshold setting</strong>:</p>
+<ul>
+<li>Too low: background noise (fan, air conditioning, keyboard) triggers scrolling</li>
+<li>Too high: your voice does not trigger scrolling reliably</li>
+<li>Ideal: the lowest value that does not trigger from ambient noise in your workspace</li>
+</ul>
+<p><strong>Recommended approach</strong>: Set the threshold while in a quiet moment in your office. Speak a sentence at your normal standup volume. The prompter should start scrolling immediately. Adjust threshold until this is consistent.</p>
+<p><strong>Fallback</strong>: If voice activation behaves unexpectedly, you can always use the keyboard shortcut (Space) or the Play/Pause button to control scrolling manually.</p>
+<hr />
+<h2>Using TTS for Standup Rehearsal</h2>
+<p>The TTS rehearsal workflow is particularly valuable for standup meetings:</p>
+<ol>
+<li>Write your standup script</li>
+<li>Press the TTS button to hear it played back</li>
+<li>Check the timing (aim for under 2 minutes)</li>
+<li>Listen for anything that sounds unclear or overly technical for the audience</li>
+<li>Check that blockers are clearly stated and actionable</li>
+<li>Revise and replay until you are satisfied</li>
+</ol>
+<p>After a week of TTS rehearsal, you will find that your scripted standups become more concise and more informative without extra effort.</p>
+<hr />
+<h2>Pro Tips for Standup Success</h2>
+<p><strong>Write the script the evening before</strong></p>
+<p>If you write your standup script at the end of the workday, the context is fresh. Your "Yesterday" section writes itself. Your "Today" section is already planned. This takes under two minutes and produces a much cleaner standup than writing it five minutes before the call.</p>
+<p><strong>Use stage directions for pacing</strong></p>
+<p>In your script, add bracket annotations like [PAUSE] or [BREATHE] to remind yourself to slow down. When nervous, people speak faster. A short pause after each section makes your standup easier to follow.</p>
+<p><strong>Match font size to your monitor distance</strong></p>
+<p>If you sit close to your monitor (under 60cm), 24pt may be sufficient. At normal distance (60-90cm), 28-32pt is ideal. If you are on a large display or sitting back, go higher. The goal is to read without leaning in.</p>
+<p><strong>Keep the window narrow for desk setups</strong></p>
+<p>In <strong>Settings &gt; Layout</strong>, you can reduce the window width. A narrower prompter window allows more of your screen to be used by the video call, which reduces the chance of accidentally sharing the prompter in a screen share.</p>
+<p><strong>Use dark theme during morning calls</strong></p>
+<p>The dark theme reduces eye strain during morning standups when office lighting may not be fully adjusted. The dark background with light text is also less likely to be accidentally visible in a screen share recording.</p>
+<hr />
+<h2>Common Mistakes and How to Fix Them</h2>
+<p><strong>Mistake: Script is too long</strong></p>
+<p>Fix: Aim for 100-150 words. If your script is longer, cut anything that can be communicated in a follow-up message instead.</p>
+<p><strong>Mistake: Reading too fast because of nerves</strong></p>
+<p>Fix: Add [PAUSE] markers after each section. During TTS rehearsal, check that the pace sounds comfortable.</p>
+<p><strong>Mistake: Voice activation scrolling past your current position</strong></p>
+<p>Fix: Lower the scroll speed in Settings &gt; Behavior. Voice activation works best at a slow to medium scroll speed where you can glance ahead.</p>
+<p><strong>Mistake: Script becomes stale because you forget to update it</strong></p>
+<p>Fix: Set a reminder to update the script at the end of your workday. The "Session complete - update script" habit takes under two minutes once established.</p>
+<p><strong>Mistake: TTS voice sounds robotic and distracting during rehearsal</strong></p>
+<p>Fix: In Settings &gt; Voice, try different voices. On macOS, voices like Samantha Enhanced or Alex tend to sound more natural for rehearsal purposes.</p>
+<hr />
+<p><em>Previous: Introduction | Next: Chapter 2 - Team Meetings</em></p>
+<div class="nav-footer"><div><a href="00-introduction.html">&larr; MGenie User Guide</a></div><div><a href="02-team-meetings.html">Chapter 2: Team Meetings &rarr;</a></div></div>
+</main>
+</body>
+</html>

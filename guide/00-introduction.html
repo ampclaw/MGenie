@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MGenie User Guide - MGenie Guide</title>
+<style>
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	background: #0d1117;
+	color: #c9d1d9;
+	display: flex;
+	min-height: 100vh;
+}
+#sidebar {
+	width: 280px;
+	min-width: 280px;
+	background: #1a1a2e;
+	padding: 24px 0;
+	position: fixed;
+	top: 0; left: 0;
+	height: 100vh;
+	overflow-y: auto;
+	z-index: 100;
+	box-shadow: 2px 0 8px rgba(0,0,0,.5);
+	font-family: system-ui, sans-serif;
+}
+#sidebar h2 {
+	color: #e6edf3;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	padding: 0 24px 16px;
+	border-bottom: 1px solid #30363d;
+	margin: 0 0 8px;
+}
+#sidebar a {
+	display: block;
+	padding: 9px 24px;
+	color: #c9d1d9;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 1.5;
+	transition: all .15s;
+}
+#sidebar a:hover { background: rgba(255,255,255,.06); color: #fff; }
+#sidebar a.active {
+	background: #0d1117;
+	color: #58a6ff;
+	border-left: 3px solid #58a6ff;
+	padding-left: 21px;
+	font-weight: 600;
+}
+.chapter-num { font-size: 10px; color: #6e7681; margin-right: 5px; }
+#content { margin-left: 280px; padding: 48px 64px; max-width: 860px; line-height: 1.8; }
+h1 { color: #e6edf3; font-size: 2rem; border-bottom: 2px solid #30363d; padding-bottom: 12px; margin-top: 0; }
+h2 { color: #e6edf3; font-size: 1.4rem; margin-top: 40px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+h3 { color: #e6edf3; font-size: 1.1rem; margin-top: 28px; }
+h4, h5 { color: #e6edf3; margin-top: 20px; }
+a { color: #58a6ff; }
+p { margin: 0 0 16px; }
+code { background: #161b22; color: #79c0ff; padding: 2px 7px; border-radius: 4px; font-family: "SF Mono",Monaco,Consolas,monospace; font-size: .87em; }
+pre { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px 24px; overflow-x: auto; margin: 20px 0; }
+pre code { background: none; padding: 0; color: #e6edf3; font-size: .84em; white-space: pre; }
+blockquote { border-left: 4px solid #3fb950; margin: 20px 0; padding: 12px 20px; background: rgba(63,185,80,.06); border-radius: 0 6px 6px 0; }
+table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: .92em; }
+th { background: #161b22; color: #e6edf3; padding: 10px 16px; text-align: left; border: 1px solid #30363d; font-weight: 600; }
+td { padding: 9px 16px; border: 1px solid #30363d; }
+tr:nth-child(even) { background: rgba(255,255,255,.025); }
+hr { border: none; border-top: 1px solid #30363d; margin: 32px 0; }
+ul, ol { padding-left: 24px; margin: 0 0 16px; }
+li { margin-bottom: 6px; }
+.nav-footer { display: flex; justify-content: space-between; margin-top: 64px; padding-top: 24px; border-top: 1px solid #30363d; }
+.nav-footer a { background: #161b22; color: #79c0ff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: .9em; border: 1px solid #30363d; }
+.nav-footer a:hover { background: #0d1117; border-color: #58a6ff; }
+@media (max-width: 768px) { #sidebar { display: none; } #content { margin-left: 0; padding: 24px; } }
+</style>
+</head>
+<body>
+<div id="sidebar">
+	<h2>MGenie User Guide</h2>
+		<a href="00-introduction.html" class="active"><span class="chapter-num">00</span> MGenie User Guide</a>
+		<a href="01-scrum-standup.html" class=""><span class="chapter-num">01</span> Chapter 1: Scrum Standup Meetings</a>
+		<a href="02-team-meetings.html" class=""><span class="chapter-num">02</span> Chapter 2: Team Meetings</a>
+		<a href="03-presentations.html" class=""><span class="chapter-num">03</span> Chapter 3: Presentations</a>
+		<a href="04-discussions.html" class=""><span class="chapter-num">04</span> Chapter 4: Discussions</a>
+		<a href="05-interviews.html" class=""><span class="chapter-num">05</span> Chapter 5: Interviews</a>
+		<a href="06-knowledge-base.html" class=""><span class="chapter-num">06</span> Chapter 6: Knowledge Base Building</a>
+</div>
+<main id="content">
+<h1>MGenie User Guide</h1>
+<h2>Introduction</h2>
+<p>Welcome to the MGenie User Guide. MGenie is a floating teleprompter for macOS that lives at the top of your screen, keeping your script visible during any call, recording, or presentation without obscuring your camera view or your audience.</p>
+<p>This guide covers everything from first launch to building a long-term knowledge base from your meetings. Whether you use MGenie for daily standups, formal presentations, job interviews, or team brainstorms, each chapter walks through a specific use case with practical setup instructions and real-world examples.</p>
+<hr />
+<h2>What Is MGenie?</h2>
+<p>MGenie is a macOS menu bar application that displays a floating, semi-transparent teleprompter window anchored to the top of your screen. It is designed to be invisible to screen-sharing and recording software while remaining fully visible to you, so you can read your script naturally while appearing composed and prepared on camera.</p>
+<h3>Core Features at a Glance</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scrolling Script Display</strong></td>
+<td>Shows your script in a readable, auto-scrolling window at the top of the screen</td>
+</tr>
+<tr>
+<td><strong>TTS Playback with Word Highlighting</strong></td>
+<td>Reads your script aloud, highlighting each word as it is spoken</td>
+</tr>
+<tr>
+<td><strong>Recording and Live Transcription</strong></td>
+<td>Records your microphone and transcribes speech in real time</td>
+</tr>
+<tr>
+<td><strong>AI Summary</strong></td>
+<td>Summarizes the current session transcript into key points</td>
+</tr>
+<tr>
+<td><strong>AI Answer</strong></td>
+<td>Generates a contextual answer to the last question detected in the transcript</td>
+</tr>
+<tr>
+<td><strong>Floating Control Panel</strong></td>
+<td>A compact toolbar for transport, TTS, recording, AI, and view controls</td>
+</tr>
+<tr>
+<td><strong>Knowledge Base Export</strong></td>
+<td>Exports session transcripts and AI summaries to Markdown files</td>
+</tr>
+<tr>
+<td><strong>Context Files</strong></td>
+<td>Feeds previous documents into the AI for smarter, context-aware answers</td>
+</tr>
+<tr>
+<td><strong>Voice Activation</strong></td>
+<td>Starts scrolling automatically when you begin speaking</td>
+</tr>
+<tr>
+<td><strong>Multiple Themes</strong></td>
+<td>Light, dark, and custom color themes to match any environment</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Main UI Overview</h2>
+<p>MGenie consists of two visible elements: the Prompter Window and the Floating Control Panel.</p>
+<h3>Prompter Window</h3>
+<pre><code>+--------------------------------------------------------------+
+| * (green = hidden from recording) 12:34:56 |
+| . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+| |
+| Good morning everyone. Today I want to share |
+| a few key points about our upcoming launch. |
+| |
+| First, we focused on reducing complexity |
+| and delivering a clean user experience. |
+| |
+| Second, we improved performance significantly. |
+| . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+| [====....] 45pct|
+| [Play][Back][Fwd][Reset] | [TTS] | [Rec][New][Exp] | [AI] |
++--------------------------------------------------------------+
+</code></pre>
+<p><strong>Status indicator</strong> (top-left): Green dot means the window is excluded from screen capture. The clock shows elapsed session time.</p>
+<p><strong>Script area</strong> (center): Your formatted script text, auto-scrolling as you speak. The current word is highlighted during TTS playback.</p>
+<p><strong>Progress bar</strong> (bottom-right of toolbar): Shows your position through the script.</p>
+<p><strong>Hover controls</strong> (bottom toolbar): Appear when you hover over the window. Grouped by function.</p>
+<h3>Floating Control Panel</h3>
+<p>The control panel is a compact, always-on-top toolbar that floats independently from the prompter. You can drag it anywhere on screen.</p>
+<pre><code>+--------------------------------------------------------------+
+| Play Back Fwd Reset | TTS | Rec New Exp | AI |
++--------------------------------------------------------------+
+ Transport TTS Recording/Session AI/View
+</code></pre>
+<p><strong>Transport</strong>: Play/pause scrolling, scroll back, scroll forward, reset to top</p>
+<p><strong>TTS</strong>: Toggle Text-to-Speech playback with word highlighting</p>
+<p><strong>Recording/Session</strong>: Start/stop recording, new session, export session</p>
+<p><strong>AI</strong>: Run AI Summary, run AI Answer, toggle visibility</p>
+<hr />
+<h2>Full App Layout</h2>
+<p>Here is how MGenie sits at the top of your screen during a video call:</p>
+<pre><code> macOS Menu Bar -----------------------------------------------
+
++--------------------------------------------------------------+ &lt;- Prompter Window
+| * 00:04:32 | (floating, top of screen)
+| - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+| |
+| Yesterday I completed the API integration work. |
+| Today I am focused on writing unit tests for the |
+| data layer, and reviewing the PR from Sarah. |
+| |
+| No blockers at this time. |
+| - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+| [=======..] 75pct |
++--------------------------------------------------------------+
+
++------------------------------------------+ &lt;- Floating Control Panel
+| Play Back Fwd Reset | TTS | Rec New Exp | (drag anywhere)
++------------------------------------------+
+
++--------------------------------------------------------------+
+| |
+| Your video call, presentation, or work application |
+| occupies the rest of the screen below MGenie |
+| |
++--------------------------------------------------------------+
+</code></pre>
+<p>MGenie occupies the top band of the screen and does not interfere with content below. The control panel floats freely and can be moved to any corner.</p>
+<hr />
+<h2>How This Guide Is Organized</h2>
+<p>Each chapter addresses a specific use case. You do not need to read them in order. Jump to the scenario that fits your immediate need.</p>
+<table>
+<thead>
+<tr>
+<th>Chapter</th>
+<th>Use Case</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>01 - Scrum Standup</strong></td>
+<td>Daily 15-minute standups</td>
+<td>Developers, PMs, scrum teams</td>
+</tr>
+<tr>
+<td><strong>02 - Team Meetings</strong></td>
+<td>Agenda-driven, 30-60 min meetings</td>
+<td>Facilitators, team leads</td>
+</tr>
+<tr>
+<td><strong>03 - Presentations</strong></td>
+<td>Formal demos, board updates, talks</td>
+<td>Presenters, executives</td>
+</tr>
+<tr>
+<td><strong>04 - Discussions</strong></td>
+<td>Q&amp;A panels, debates, brainstorming</td>
+<td>Moderators, panelists</td>
+</tr>
+<tr>
+<td><strong>05 - Interviews</strong></td>
+<td>Job interviews, media, podcasts</td>
+<td>Job seekers, journalists</td>
+</tr>
+<tr>
+<td><strong>06 - Knowledge Base</strong></td>
+<td>Building searchable meeting archives</td>
+<td>Teams, knowledge workers</td>
+</tr>
+</tbody>
+</table>
+<p>Each chapter follows the same structure:</p>
+<ol>
+<li>Overview of the use case and its specific challenges</li>
+<li>How MGenie addresses those challenges</li>
+<li>Step-by-step setup guide</li>
+<li>Workflow diagram</li>
+<li>Example script template</li>
+<li>Pro tips and common mistakes</li>
+</ol>
+<hr />
+<h2>Quick-Start Checklist</h2>
+<p>New to MGenie? Complete these five steps and you will be ready for your first session in under ten minutes.</p>
+<p><strong>Step 1 - Launch MGenie</strong></p>
+<p>Open MGenie from your Applications folder or Launchpad. The menu bar icon appears in the top-right of your menu bar. Click it to show the prompter and control panel.</p>
+<p><strong>Step 2 - Write your script</strong></p>
+<p>Click the menu bar icon, then open <strong>Settings &gt; Script</strong>. Type or paste your script. Use plain text or Markdown formatting. Save when done.</p>
+<p><strong>Step 3 - Configure your voice</strong></p>
+<p>Go to <strong>Settings &gt; Voice</strong>. Select your preferred TTS voice and speaking rate. Click the preview button to hear a sample. Adjust until the speed and tone feel natural for your use case.</p>
+<p><strong>Step 4 - Set up AI (optional but recommended)</strong></p>
+<p>Go to <strong>Settings &gt; AI</strong>. Enter your OpenAI API key. Set your Knowledge Base folder. This is where exported summaries will be saved after each session.</p>
+<p><strong>Step 5 - Run a dry rehearsal</strong></p>
+<p>Press the TTS button in the control panel to start playback. Listen to your script read back to you. Adjust speed and font size as needed. When satisfied, press the Record button to begin a live session.</p>
+<hr />
+<h2>Interface Reference Summary</h2>
+<h3>Settings Panels</h3>
+<table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>Key Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Script</strong></td>
+<td>Write, edit, and format your teleprompter script</td>
+</tr>
+<tr>
+<td><strong>Appearance</strong></td>
+<td>Font, font size, text color, background opacity, theme</td>
+</tr>
+<tr>
+<td><strong>Layout</strong></td>
+<td>Window height, width, position anchoring</td>
+</tr>
+<tr>
+<td><strong>Behavior</strong></td>
+<td>Scroll speed, voice activation threshold, auto-pause on silence</td>
+</tr>
+<tr>
+<td><strong>Voice</strong></td>
+<td>TTS voice selection, speaking rate, pitch</td>
+</tr>
+<tr>
+<td><strong>AI</strong></td>
+<td>API key, model selection, summary style, KB folder path</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Upload context files fed into AI for richer, context-aware answers</td>
+</tr>
+<tr>
+<td><strong>Shortcuts</strong></td>
+<td>Keyboard shortcuts for all actions</td>
+</tr>
+</tbody>
+</table>
+<h3>Keyboard Shortcuts (Defaults)</h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Play / Pause scrolling</td>
+<td>Space</td>
+</tr>
+<tr>
+<td>Scroll back</td>
+<td>Left Arrow</td>
+</tr>
+<tr>
+<td>Scroll forward</td>
+<td>Right Arrow</td>
+</tr>
+<tr>
+<td>Reset to top</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Start / Stop recording</td>
+<td>Cmd+R</td>
+</tr>
+<tr>
+<td>Toggle TTS</td>
+<td>Cmd+T</td>
+</tr>
+<tr>
+<td>AI Summary</td>
+<td>Cmd+S</td>
+</tr>
+<tr>
+<td>AI Answer</td>
+<td>Cmd+A</td>
+</tr>
+<tr>
+<td>New session</td>
+<td>Cmd+N</td>
+</tr>
+<tr>
+<td>Toggle visibility</td>
+<td>Cmd+H</td>
+</tr>
+</tbody>
+</table>
+<p>All shortcuts are fully customizable in <strong>Settings &gt; Shortcuts</strong>.</p>
+<hr />
+<h2>Technical Requirements</h2>
+<ul>
+<li><strong>macOS 13 Ventura or later</strong> is required</li>
+<li><strong>Apple Silicon or Intel</strong>: Universal binary, runs natively on both architectures</li>
+<li><strong>Microphone access</strong>: Required for recording and voice activation</li>
+<li><strong>Internet connection</strong>: Required for AI Summary and AI Answer features</li>
+<li><strong>OpenAI API key</strong>: Required for AI features (obtain at platform.openai.com)</li>
+</ul>
+<p>MGenie does not require any subscription. AI features consume OpenAI API credits at standard rates based on the number of tokens processed.</p>
+<hr />
+<h2>A Note on Privacy</h2>
+<p>MGenie processes audio locally for transcription using Apple on-device speech recognition. Transcripts are only sent to OpenAI when you explicitly trigger an AI Summary or AI Answer action. The prompter window is designed to be excluded from screen capture; the green status dot in the top-left corner confirms this is active. Your Knowledge Base files are stored locally and are never uploaded automatically.</p>
+<hr />
+<p><em>Next: Chapter 1 - Scrum Standup Meetings</em></p>
+<div class="nav-footer"><div></div><div><a href="01-scrum-standup.html">Chapter 1: Scrum Standup Meetings &rarr;</a></div></div>
+</main>
+</body>
+</html>

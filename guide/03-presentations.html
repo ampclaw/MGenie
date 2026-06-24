@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapter 3: Presentations - MGenie Guide</title>
+<style>
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	background: #0d1117;
+	color: #c9d1d9;
+	display: flex;
+	min-height: 100vh;
+}
+#sidebar {
+	width: 280px;
+	min-width: 280px;
+	background: #1a1a2e;
+	padding: 24px 0;
+	position: fixed;
+	top: 0; left: 0;
+	height: 100vh;
+	overflow-y: auto;
+	z-index: 100;
+	box-shadow: 2px 0 8px rgba(0,0,0,.5);
+	font-family: system-ui, sans-serif;
+}
+#sidebar h2 {
+	color: #e6edf3;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	padding: 0 24px 16px;
+	border-bottom: 1px solid #30363d;
+	margin: 0 0 8px;
+}
+#sidebar a {
+	display: block;
+	padding: 9px 24px;
+	color: #c9d1d9;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 1.5;
+	transition: all .15s;
+}
+#sidebar a:hover { background: rgba(255,255,255,.06); color: #fff; }
+#sidebar a.active {
+	background: #0d1117;
+	color: #58a6ff;
+	border-left: 3px solid #58a6ff;
+	padding-left: 21px;
+	font-weight: 600;
+}
+.chapter-num { font-size: 10px; color: #6e7681; margin-right: 5px; }
+#content { margin-left: 280px; padding: 48px 64px; max-width: 860px; line-height: 1.8; }
+h1 { color: #e6edf3; font-size: 2rem; border-bottom: 2px solid #30363d; padding-bottom: 12px; margin-top: 0; }
+h2 { color: #e6edf3; font-size: 1.4rem; margin-top: 40px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+h3 { color: #e6edf3; font-size: 1.1rem; margin-top: 28px; }
+h4, h5 { color: #e6edf3; margin-top: 20px; }
+a { color: #58a6ff; }
+p { margin: 0 0 16px; }
+code { background: #161b22; color: #79c0ff; padding: 2px 7px; border-radius: 4px; font-family: "SF Mono",Monaco,Consolas,monospace; font-size: .87em; }
+pre { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px 24px; overflow-x: auto; margin: 20px 0; }
+pre code { background: none; padding: 0; color: #e6edf3; font-size: .84em; white-space: pre; }
+blockquote { border-left: 4px solid #3fb950; margin: 20px 0; padding: 12px 20px; background: rgba(63,185,80,.06); border-radius: 0 6px 6px 0; }
+table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: .92em; }
+th { background: #161b22; color: #e6edf3; padding: 10px 16px; text-align: left; border: 1px solid #30363d; font-weight: 600; }
+td { padding: 9px 16px; border: 1px solid #30363d; }
+tr:nth-child(even) { background: rgba(255,255,255,.025); }
+hr { border: none; border-top: 1px solid #30363d; margin: 32px 0; }
+ul, ol { padding-left: 24px; margin: 0 0 16px; }
+li { margin-bottom: 6px; }
+.nav-footer { display: flex; justify-content: space-between; margin-top: 64px; padding-top: 24px; border-top: 1px solid #30363d; }
+.nav-footer a { background: #161b22; color: #79c0ff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: .9em; border: 1px solid #30363d; }
+.nav-footer a:hover { background: #0d1117; border-color: #58a6ff; }
+@media (max-width: 768px) { #sidebar { display: none; } #content { margin-left: 0; padding: 24px; } }
+</style>
+</head>
+<body>
+<div id="sidebar">
+	<h2>MGenie User Guide</h2>
+		<a href="00-introduction.html" class=""><span class="chapter-num">00</span> MGenie User Guide</a>
+		<a href="01-scrum-standup.html" class=""><span class="chapter-num">01</span> Chapter 1: Scrum Standup Meetings</a>
+		<a href="02-team-meetings.html" class=""><span class="chapter-num">02</span> Chapter 2: Team Meetings</a>
+		<a href="03-presentations.html" class="active"><span class="chapter-num">03</span> Chapter 3: Presentations</a>
+		<a href="04-discussions.html" class=""><span class="chapter-num">04</span> Chapter 4: Discussions</a>
+		<a href="05-interviews.html" class=""><span class="chapter-num">05</span> Chapter 5: Interviews</a>
+		<a href="06-knowledge-base.html" class=""><span class="chapter-num">06</span> Chapter 6: Knowledge Base Building</a>
+</div>
+<main id="content">
+<h1>Chapter 3: Presentations</h1>
+<h2>Overview</h2>
+<p>Formal presentations demand a different kind of discipline than casual meetings. Board updates, product demos, investor pitches, conference talks, and client briefings all share the same challenge: you need to deliver polished, precise content while appearing natural and confident on camera or in person.</p>
+<p>The traditional approach is to memorize bullet points from a slide deck, but this creates anxiety and leads to either over-rehearsed robotic delivery or under-rehearsed fumbling. MGenie offers a better middle path: a complete script that you can read naturally without memorization, paired with slide deck navigation cues built into the script itself.</p>
+<hr />
+<h2>How MGenie Complements a Slide Deck</h2>
+<p>MGenie and a slide deck serve different purposes and work together rather than replacing each other.</p>
+<p><strong>The slide deck</strong> is for your audience. It contains the visual elements: charts, diagrams, images, key numbers, and brief bullet points that anchor the audience attention.</p>
+<p><strong>The MGenie script</strong> is for you. It contains the full narrative: the context, the explanation, the transitions, and the story that connects the slides.</p>
+<p>This separation is powerful. Your slides stay clean and visual (no walls of text for the audience to read instead of listening to you). Your script is complete and natural (no memorization required).</p>
+<h3>Side-by-Side Workflow</h3>
+<pre><code>+---------------------------+ +---------------------------+
+| MGENIE PROMPTER | | YOUR SLIDE DECK |
+| (visible to you) | | (visible to audience) |
+| | | |
+| Slide 1: Title | | TITLE SLIDE |
+| | | MGenie: AI-Powered |
+| &quot;Good morning. Today I | | Teleprompter |
+| want to share how MGenie | | |
+| transforms the way teams | | |
+| run their meetings...&quot; | | |
+| | | |
+| [ADVANCE SLIDE] | | |
++---------------------------+ +---------------------------+
+</code></pre>
+<p>When you see <code>[ADVANCE SLIDE]</code> in the prompter, you advance your deck. Your words and your slides stay in sync without memorization or guesswork.</p>
+<hr />
+<h2>Script Annotations for Presentations</h2>
+<p>Presentation scripts use a richer set of stage directions than other meeting types:</p>
+<table>
+<thead>
+<tr>
+<th>Annotation</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[ADVANCE SLIDE]</code></td>
+<td>Move to the next slide</td>
+</tr>
+<tr>
+<td><code>[SHOW DEMO]</code></td>
+<td>Switch to live demo</td>
+</tr>
+<tr>
+<td><code>[PAUSE 3s]</code></td>
+<td>Brief pause for effect</td>
+</tr>
+<tr>
+<td><code>[SLOW DOWN]</code></td>
+<td>Reminder to reduce pace</td>
+</tr>
+<tr>
+<td><code>[BREATHE]</code></td>
+<td>Reminder to pause and breathe</td>
+</tr>
+<tr>
+<td><code>[EYE CONTACT]</code></td>
+<td>Look up at the camera or audience</td>
+</tr>
+<tr>
+<td><code>[CHECK TIME]</code></td>
+<td>Verify elapsed time vs target</td>
+</tr>
+<tr>
+<td><code>[TRANSITION]</code></td>
+<td>Signal a major section change</td>
+</tr>
+<tr>
+<td><code>[Q&amp;A]</code></td>
+<td>Open the floor to questions</td>
+</tr>
+<tr>
+<td><code>[BACKUP SLIDE: 7]</code></td>
+<td>Reference to a backup slide if needed</td>
+</tr>
+</tbody>
+</table>
+<p>These annotations appear in your prompter but never in any recording or export. They are read only by you.</p>
+<hr />
+<h2>TTS for Speech Rehearsal and Timing</h2>
+<p>One of the most valuable presentation preparation tools in MGenie is TTS rehearsal.</p>
+<p><strong>How to use TTS for presentation prep</strong>:</p>
+<ol>
+<li>Write your complete presentation script in Settings &gt; Script</li>
+<li>Press TTS to hear the script played back in a natural voice</li>
+<li>Time the full playback. A 20-minute presentation should play back in 16-18 minutes (speakers read faster than TTS)</li>
+<li>Listen for sections that are too dense or too thin</li>
+<li>Revise and replay until the structure feels right</li>
+<li>On the day, your actual delivery will feel rehearsed but natural</li>
+</ol>
+<p><strong>Timing calibration</strong>: Most presenters speak at 130-150 words per minute. TTS playback at natural speed is also in this range. Use the playback duration as a proxy for your speaking time.</p>
+<p><strong>Spotting problems</strong>: Dense technical sections often reveal themselves in TTS playback as hard to follow. If you have trouble following the TTS narration, your audience will too. Simplify those sections.</p>
+<hr />
+<h2>Speed Control for Delivery</h2>
+<p>MGenie scroll speed affects how quickly the script advances as you speak. For presentations:</p>
+<p><strong>Slower speed</strong>: Use this if you tend to speak quickly when nervous. A slower scroll forces you to slow down because the next line is not yet visible.</p>
+<p><strong>Medium speed</strong>: The default. Works well for most presentation styles.</p>
+<p><strong>Faster speed</strong>: Use if you naturally speak quickly or have dense content to cover.</p>
+<p><strong>Voice activation for presentations</strong>: Voice activation is particularly useful in presentations because it leaves your hands completely free to control the slide deck, gestures, or a laser pointer. The prompter advances as you speak without any keyboard or mouse interaction.</p>
+<hr />
+<h2>Placing MGenie Near the Camera</h2>
+<p>For remote presentations, the position of the prompter window relative to your camera has a significant impact on eye contact.</p>
+<p><strong>The goal</strong>: Appear to be looking at your audience, not reading a document.</p>
+<p><strong>Best placement</strong>: If you use an external monitor or a large laptop screen, position MGenie at the very top of the screen, directly below the camera. Your eyes will naturally gaze toward the camera as you read.</p>
+<p><strong>Adjusting with Settings &gt; Layout</strong>:</p>
+<ul>
+<li>Anchor the window to the top-center of the screen</li>
+<li>Reduce the window height to show only 3-4 lines of text at a time</li>
+<li>Use a large font (32-40pt) so you can read quickly without searching</li>
+</ul>
+<p>With a short window showing a small number of lines in large text, your eye movement from camera to script and back is minimal. From the audience perspective, you appear to be looking directly at them.</p>
+<hr />
+<h2>Step-by-Step Setup Guide</h2>
+<p><strong>Step 1 - Write the complete script</strong></p>
+<p>Write out every word you intend to say. This sounds time-consuming but actually saves time in rehearsal, because you only need to adjust wording once (in the script) rather than rediscovering it each time you run through the presentation.</p>
+<p>For a 20-minute presentation, expect a script of 2,500 to 3,000 words.</p>
+<p><strong>Step 2 - Add slide annotations</strong></p>
+<p>After writing the full narrative, go back through and insert <code>[ADVANCE SLIDE]</code> markers at every point where you intend to advance your slide deck. Also add <code>[PAUSE]</code>, <code>[BREATHE]</code>, and <code>[EYE CONTACT]</code> reminders where appropriate.</p>
+<p><strong>Step 3 - Set appearance for presentation context</strong></p>
+<p>In <strong>Settings &gt; Appearance</strong>, choose your theme based on environment:</p>
+<ul>
+<li>Dark theme: best for conference presentations and dark stages</li>
+<li>Light theme: best for bright offices or well-lit rooms</li>
+<li>Custom: set opacity to semi-transparent to see content behind the window</li>
+</ul>
+<p><strong>Step 4 - Do TTS timing rehearsal</strong></p>
+<p>Press TTS and time the full playback. Adjust content until the timing is within your target. Run TTS at least three times across two days before the actual presentation.</p>
+<p><strong>Step 5 - On the day: position the window</strong></p>
+<p>Before the presentation starts, drag the prompter window to its ideal position (top-center of screen, near camera). Confirm font size and scroll speed are set correctly. Do a quick 30-second voice activation test.</p>
+<p><strong>Step 6 - Present</strong></p>
+<p>Start recording if you want a transcript for review or Knowledge Base. Begin your presentation. Let the prompter guide your delivery. Trust the rehearsal.</p>
+<hr />
+<h2>Example Presentation Script Template</h2>
+<pre><code>[PRESENTATION: Q3 Product Roadmap Update]
+[AUDIENCE: Board of Directors]
+[TARGET DURATION: 20 minutes]
+[DATE: 2024-01-15]
+
+---
+
+Opening (2 min)
+
+Good morning. Thank you for making time today.
+
+I am going to walk you through our Q3 roadmap update,
+covering three areas: what we shipped in Q2, what we
+plan for Q3, and the one strategic bet we are making
+for the remainder of the year.
+
+[ADVANCE SLIDE] - Q2 Review slide
+
+---
+
+Q2 Review (5 min)
+
+In Q2, we completed 14 of 16 planned features.
+The two items that moved to Q3 were the payment
+integration overhaul and the new analytics dashboard.
+
+[ADVANCE SLIDE] - Delivery metrics chart
+
+This chart shows our delivery velocity over the past
+three quarters. You can see the consistent upward trend
+as we improved our sprint process.
+
+[PAUSE 2s]
+
+The standout achievement of Q2 was the mobile app
+redesign. Downloads increased 34 pct in the first two
+weeks after launch.
+
+[ADVANCE SLIDE] - Mobile metrics slide
+
+---
+
+Q3 Plan (8 min)
+
+For Q3, we have three priorities.
+
+Priority one is completing the payment integration.
+This was our most requested feature from enterprise
+customers and we expect it to impact renewal rates.
+
+[ADVANCE SLIDE] - Q3 roadmap overview
+
+Priority two is the analytics dashboard. Our data
+team has made significant progress and we now have
+a beta ready for internal testing.
+
+[ADVANCE SLIDE] - Analytics dashboard screenshot]
+
+Priority three is infrastructure hardening. This is
+not visible to customers but is critical for the
+scalability we need to support our growth target.
+
+[ADVANCE SLIDE] - Infrastructure investment slide
+
+---
+
+Strategic Bet (3 min)
+
+The one bet I want to highlight is our investment
+in AI-assisted features. We have three engineers
+working on a context-aware recommendation engine
+that we expect to ship in Q4.
+
+[ADVANCE SLIDE] - AI feature roadmap
+
+This positions us to differentiate in a crowded market
+and creates a moat that is difficult to replicate quickly.
+
+[BREATHE]
+[PAUSE 2s]
+
+---
+
+Closing and Q&amp;A (2 min)
+
+In summary: Q2 was strong. Q3 is well-structured and
+focused. Our strategic bet on AI is intentional and
+aligns with the long-term vision we discussed last year.
+
+I am happy to take questions.
+
+[Q&amp;A - open floor]
+[BACKUP SLIDES available: slides 12-18]
+</code></pre>
+<hr />
+<h2>Pro Tips for Presentations</h2>
+<p><strong>Shorter lines scroll better</strong></p>
+<p>Write each line of the script at 60 characters or fewer. Shorter lines are easier to read at a glance and scroll more smoothly.</p>
+<p><strong>Practice the transitions</strong></p>
+<p>The moment you advance a slide while continuing to narrate is the hardest part of a presentation to execute smoothly. During TTS rehearsal, physically advance your slides when you hear <code>[ADVANCE SLIDE]</code>. Run this several times until it feels natural.</p>
+<p><strong>Use the semi-transparent background</strong></p>
+<p>In <strong>Settings &gt; Appearance</strong>, set the background opacity to around 70 pct. This lets you see your slide deck or video call through the prompter, which helps with spatial awareness during the presentation.</p>
+<p><strong>Do not memorize - read and understand</strong></p>
+<p>The script should be written in your voice, using words you would naturally say. If you write the script that way, reading it will sound natural rather than scripted. The goal is not performance of a memorized text but confident delivery of a prepared narrative.</p>
+<hr />
+<p><em>Previous: Chapter 2 - Team Meetings | Next: Chapter 4 - Discussions</em></p>
+<div class="nav-footer"><div><a href="02-team-meetings.html">&larr; Chapter 2: Team Meetings</a></div><div><a href="04-discussions.html">Chapter 4: Discussions &rarr;</a></div></div>
+</main>
+</body>
+</html>

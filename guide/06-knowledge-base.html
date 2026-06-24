@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapter 6: Knowledge Base Building - MGenie Guide</title>
+<style>
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	background: #0d1117;
+	color: #c9d1d9;
+	display: flex;
+	min-height: 100vh;
+}
+#sidebar {
+	width: 280px;
+	min-width: 280px;
+	background: #1a1a2e;
+	padding: 24px 0;
+	position: fixed;
+	top: 0; left: 0;
+	height: 100vh;
+	overflow-y: auto;
+	z-index: 100;
+	box-shadow: 2px 0 8px rgba(0,0,0,.5);
+	font-family: system-ui, sans-serif;
+}
+#sidebar h2 {
+	color: #e6edf3;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	padding: 0 24px 16px;
+	border-bottom: 1px solid #30363d;
+	margin: 0 0 8px;
+}
+#sidebar a {
+	display: block;
+	padding: 9px 24px;
+	color: #c9d1d9;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 1.5;
+	transition: all .15s;
+}
+#sidebar a:hover { background: rgba(255,255,255,.06); color: #fff; }
+#sidebar a.active {
+	background: #0d1117;
+	color: #58a6ff;
+	border-left: 3px solid #58a6ff;
+	padding-left: 21px;
+	font-weight: 600;
+}
+.chapter-num { font-size: 10px; color: #6e7681; margin-right: 5px; }
+#content { margin-left: 280px; padding: 48px 64px; max-width: 860px; line-height: 1.8; }
+h1 { color: #e6edf3; font-size: 2rem; border-bottom: 2px solid #30363d; padding-bottom: 12px; margin-top: 0; }
+h2 { color: #e6edf3; font-size: 1.4rem; margin-top: 40px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+h3 { color: #e6edf3; font-size: 1.1rem; margin-top: 28px; }
+h4, h5 { color: #e6edf3; margin-top: 20px; }
+a { color: #58a6ff; }
+p { margin: 0 0 16px; }
+code { background: #161b22; color: #79c0ff; padding: 2px 7px; border-radius: 4px; font-family: "SF Mono",Monaco,Consolas,monospace; font-size: .87em; }
+pre { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px 24px; overflow-x: auto; margin: 20px 0; }
+pre code { background: none; padding: 0; color: #e6edf3; font-size: .84em; white-space: pre; }
+blockquote { border-left: 4px solid #3fb950; margin: 20px 0; padding: 12px 20px; background: rgba(63,185,80,.06); border-radius: 0 6px 6px 0; }
+table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: .92em; }
+th { background: #161b22; color: #e6edf3; padding: 10px 16px; text-align: left; border: 1px solid #30363d; font-weight: 600; }
+td { padding: 9px 16px; border: 1px solid #30363d; }
+tr:nth-child(even) { background: rgba(255,255,255,.025); }
+hr { border: none; border-top: 1px solid #30363d; margin: 32px 0; }
+ul, ol { padding-left: 24px; margin: 0 0 16px; }
+li { margin-bottom: 6px; }
+.nav-footer { display: flex; justify-content: space-between; margin-top: 64px; padding-top: 24px; border-top: 1px solid #30363d; }
+.nav-footer a { background: #161b22; color: #79c0ff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: .9em; border: 1px solid #30363d; }
+.nav-footer a:hover { background: #0d1117; border-color: #58a6ff; }
+@media (max-width: 768px) { #sidebar { display: none; } #content { margin-left: 0; padding: 24px; } }
+</style>
+</head>
+<body>
+<div id="sidebar">
+	<h2>MGenie User Guide</h2>
+		<a href="00-introduction.html" class=""><span class="chapter-num">00</span> MGenie User Guide</a>
+		<a href="01-scrum-standup.html" class=""><span class="chapter-num">01</span> Chapter 1: Scrum Standup Meetings</a>
+		<a href="02-team-meetings.html" class=""><span class="chapter-num">02</span> Chapter 2: Team Meetings</a>
+		<a href="03-presentations.html" class=""><span class="chapter-num">03</span> Chapter 3: Presentations</a>
+		<a href="04-discussions.html" class=""><span class="chapter-num">04</span> Chapter 4: Discussions</a>
+		<a href="05-interviews.html" class=""><span class="chapter-num">05</span> Chapter 5: Interviews</a>
+		<a href="06-knowledge-base.html" class="active"><span class="chapter-num">06</span> Chapter 6: Knowledge Base Building</a>
+</div>
+<main id="content">
+<h1>Chapter 6: Knowledge Base Building</h1>
+<h2>Overview</h2>
+<p>Every meeting, presentation, and discussion produces valuable information: decisions made, ideas generated, problems diagnosed, and solutions agreed upon. In most teams, this information lives in memory (which fades), in chat logs (which are hard to search), or in meeting notes (which are inconsistent and often incomplete).</p>
+<p>MGenie provides a complete pipeline for converting meeting output into a structured, searchable knowledge base. With consistent use, this pipeline transforms the cost of attending a meeting into a long-term organizational asset.</p>
+<hr />
+<h2>The Full Knowledge Pipeline</h2>
+<pre><code>+----------------------------------------------------------+
+| KNOWLEDGE PIPELINE |
++----------------------------------------------------------+
+| |
+| SPEAK |
+| (presentation, meeting, standup, interview) |
+| | |
+| v |
+| RECORD + TRANSCRIBE |
+| (MGenie captures audio, generates live transcript) |
+| | |
+| v |
+| AI SUMMARY |
+| (key points, decisions, action items, open questions) |
+| | |
+| v |
+| EXPORT TO KNOWLEDGE BASE |
+| (Markdown file saved to configured KB folder) |
+| | |
+| v |
+| SEARCH AND RETRIEVAL |
+| (find decisions, quotes, action items from any session) |
+| | |
+| v |
+| CONTEXT FILES |
+| (feed previous KB into AI Answer for future sessions) |
+| |
++----------------------------------------------------------+
+</code></pre>
+<p>The pipeline is fully automated from recording through export. You press four buttons: Record, Stop, AI Summary, Export. Everything else is handled by MGenie.</p>
+<hr />
+<h2>Setting Up the Knowledge Base Folder</h2>
+<p><strong>Step 1 - Choose a folder location</strong></p>
+<p>Create a dedicated folder for your Knowledge Base. A few good options:</p>
+<ul>
+<li><code>~/Documents/KnowledgeBase/</code> - Simple, always available</li>
+<li><code>~/Dropbox/KnowledgeBase/</code> - Synced across devices</li>
+<li><code>~/Library/Mobile Documents/com~apple~CloudDocs/KnowledgeBase/</code> - iCloud synced</li>
+<li>A shared folder in your team cloud storage (Google Drive, OneDrive, etc.)</li>
+</ul>
+<p>For team use, choose a location accessible to all team members.</p>
+<p><strong>Step 2 - Configure in MGenie</strong></p>
+<p>Open <strong>Settings &gt; AI</strong> and set the Knowledge Base Folder to your chosen path. Click the folder icon to browse and select.</p>
+<p><strong>Step 3 - Create a folder structure</strong></p>
+<p>Organize your KB folder by project, team, or time period. A recommended structure:</p>
+<pre><code>KnowledgeBase/
+|-- Projects/
+| |-- ProjectAlpha/
+| |-- ProjectBeta/
+|-- Team/
+| |-- Standups/
+| |-- SprintReviews/
+| |-- Retrospectives/
+|-- Personal/
+| |-- Interviews/
+| |-- Presentations/
+</code></pre>
+<p>MGenie exports each session as a Markdown file. You can organize the exports manually after each session, or use consistent naming conventions to sort them automatically.</p>
+<hr />
+<h2>What MGenie Exports</h2>
+<p>When you press the Export button, MGenie creates a Markdown file with the following structure:</p>
+<pre><code class="language-markdown"># Session: Sprint 23 Retrospective
+**Date**: 2024-01-15
+**Duration**: 47 minutes
+**Participants**: Engineering Team
+
+---
+
+## AI Summary
+
+### Key Discussion Points
+- The auth module shipped on schedule and was well-received
+- Code review turnaround improved; average now under 4 hours
+- Staging environment reliability was the top concern
+
+### Decisions Made
+- Adopt circuit breaker pattern for staging dependencies
+- Move frontend/backend sync to Tuesday 2pm
+
+### Action Items
+- DevOps: Fix staging environment reliability by Sprint 24 Day 3
+- Tech leads: Schedule frontend/backend Tuesday sync
+
+### Open Questions
+- Should we invest in a dedicated staging environment budget?
+- Is the current deployment frequency sustainable?
+
+---
+
+## Full Transcript
+
+[00:00] Maria: Good afternoon everyone. Thank you for joining...
+[00:45] Alex: I wanted to highlight the auth module progress...
+[02:30] Maria: What went particularly well this sprint?
+...
+</code></pre>
+<p>The file includes both the AI-generated summary and the full transcript. This makes it useful for quick scanning (read the summary) and deep reference (read the transcript).</p>
+<hr />
+<h2>Building a Team Knowledge Base Over Time</h2>
+<p>The real value of the Knowledge Base emerges over weeks and months of consistent use.</p>
+<h3>Week 1: Getting Started</h3>
+<ul>
+<li>Export your first session. Note the structure and quality of the AI Summary.</li>
+<li>Identify any section headings or metadata that would be useful to standardize.</li>
+<li>Establish a naming convention (see below).</li>
+</ul>
+<h3>Month 1: Consistent Use</h3>
+<ul>
+<li>After every standup or team meeting, export to KB.</li>
+<li>20 working days of standups = 20 KB entries.</li>
+<li>These entries record every commitment, every blocker, every priority shift.</li>
+</ul>
+<h3>Quarter 1: Retrospective Mining</h3>
+<ul>
+<li>At the end of the quarter, search your KB folder for key terms.</li>
+<li>Pattern: "blocker" entries over 13 weeks reveal systemic issues.</li>
+<li>Pattern: "action item" entries that never resolve reveal accountability gaps.</li>
+<li>Pattern: decision history prevents re-litigating resolved questions.</li>
+</ul>
+<hr />
+<h2>File Naming Conventions</h2>
+<p>Consistent naming is essential for KB usability. Use a format that includes date, meeting type, and a descriptive identifier:</p>
+<pre><code>{YYYY-MM-DD}-{type}-{descriptor}.md
+
+Examples:
+2024-01-15-standup-frontend-team.md
+2024-01-15-retrospective-sprint-23.md
+2024-01-16-planning-sprint-24.md
+2024-01-17-interview-senior-engineer-candidate.md
+2024-01-18-presentation-board-q3-roadmap.md
+</code></pre>
+<p>This naming format:
+- Sorts chronologically by filename
+- Groups by meeting type when sorted differently
+- Makes the purpose of each file immediately clear</p>
+<hr />
+<h2>Using Context Files to Feed Previous KB into AI</h2>
+<p>The context file feature in <strong>Settings &gt; Context</strong> is the mechanism that makes the Knowledge Base a living, queryable system rather than a static archive.</p>
+<p><strong>How context files work</strong>:</p>
+<p>When you add files to the context list, MGenie includes their content in the prompt sent to OpenAI when you use AI Answer or AI Summary. This means the AI has access to the content of those files when generating responses.</p>
+<p><strong>Practical applications</strong>:</p>
+<p><strong>1. "What did we decide about X?"</strong></p>
+<p>Load last month KB entries as context files. Ask AI Answer: "What decision did we make about the payment integration timeline?" The AI searches the loaded context and provides a direct answer with attribution.</p>
+<p><strong>2. Running Standup Context</strong></p>
+<p>Load the previous week standups into context files. When you run AI Summary for today standup, the summary can reference what changed since last week.</p>
+<p><strong>3. Interview Preparation</strong></p>
+<p>Load your resume, the job description, and any previous interview notes. AI Answer generates responses that are specific to your experience and relevant to the role.</p>
+<p><strong>4. Onboarding New Team Members</strong></p>
+<p>Load three months of meeting KB entries into context. A new team member can ask AI Answer questions about project history and get accurate, sourced answers.</p>
+<hr />
+<h2>Step-by-Step Workflow: Standup to Knowledge Base</h2>
+<p>Here is the complete workflow for converting a daily standup into a KB entry, from start to finish.</p>
+<p><strong>Before the standup</strong>:</p>
+<ol>
+<li>Update your standup script with yesterday, today, and blockers</li>
+<li>Reset the prompter to the top</li>
+</ol>
+<p><strong>During the standup</strong>:</p>
+<ol>
+<li>Press Record</li>
+<li>Deliver your standup following the prompter</li>
+<li>Press Stop Recording when done</li>
+</ol>
+<p><strong>After the standup</strong>:</p>
+<ol>
+<li>Press AI Summary (takes 5-10 seconds)</li>
+<li>Review the summary for accuracy</li>
+<li>Press Export</li>
+<li>The file is saved to your KB folder with today date in the filename</li>
+</ol>
+<p><strong>Total post-standup time</strong>: Under 30 seconds.</p>
+<p>Do this every working day for a month and you have a complete, searchable record of what every team member committed to, what they actually completed, and what blocked them.</p>
+<hr />
+<h2>Searching and Retrieving from the Knowledge Base</h2>
+<p>The KB is stored as plain Markdown files. This means any standard tool can search it.</p>
+<p><strong>macOS Spotlight</strong>: Press Cmd+Space and search for any term. Spotlight indexes Markdown file content.</p>
+<p><strong>grep in Terminal</strong>: For power users, <code>grep -r "circuit breaker" ~/Documents/KnowledgeBase/</code> finds every session where circuit breaker was mentioned.</p>
+<p><strong>Obsidian or any Markdown editor</strong>: Open your KB folder in Obsidian or VS Code for a more structured browsing experience with backlinks and graph views.</p>
+<p><strong>Context file AI search</strong>: Load recent KB files as context files and use AI Answer to ask natural-language questions about the content.</p>
+<hr />
+<h2>Example: One Month of Standups as Project Retrospective</h2>
+<p>Here is how a month of standup KB entries becomes a project retrospective.</p>
+<p>After 20 daily standups exported to <code>KnowledgeBase/Team/Standups/</code>, you have 20 Markdown files containing every team member commitment, completion, and blocker for the month.</p>
+<p><strong>To generate a retrospective</strong>:</p>
+<ol>
+<li>Open <strong>Settings &gt; Context</strong> and add all 20 standup KB files as context</li>
+<li>Open a new MGenie session</li>
+<li>Press AI Answer and ask: "Generate a monthly retrospective from the standup history, including patterns in blockers, action items that were completed vs deferred, and any recurring themes."</li>
+<li>MGenie generates a comprehensive retrospective drawing on the full month of data</li>
+<li>Export this AI-generated retrospective to the KB</li>
+</ol>
+<p>The result is a meaningful retrospective document that would have taken hours to write manually, generated in under a minute.</p>
+<hr />
+<h2>Pro Tips for Knowledge Base Building</h2>
+<p><strong>Consistency beats perfection</strong></p>
+<p>An imperfect KB entry exported every day is worth far more than a perfect entry exported occasionally. The value is in the longitudinal record, not in the quality of any individual entry.</p>
+<p><strong>Tag entries with context in the filename</strong></p>
+<p>Include enough information in the filename to identify the content without opening the file. "2024-01-15-standup.md" is less useful than "2024-01-15-standup-backend-team-sprint-23.md".</p>
+<p><strong>Load context files before important meetings</strong></p>
+<p>Before a high-stakes meeting, take 5 minutes to load relevant KB entries as context files. AI Answer during the meeting will draw on that context, making it significantly more useful.</p>
+<p><strong>Use the KB for onboarding</strong></p>
+<p>When a new team member joins, give them read access to the team KB folder. Three months of meeting history gives them context that would otherwise take months of observation to accumulate.</p>
+<p><strong>Review your KB periodically</strong></p>
+<p>Set a monthly reminder to browse your KB folder. You will regularly find decisions you forgot you made, action items that were missed, and patterns that reveal systemic issues worth addressing.</p>
+<hr />
+<p><em>Previous: Chapter 5 - Interviews | End of MGenie User Guide</em></p>
+<div class="nav-footer"><div><a href="05-interviews.html">&larr; Chapter 5: Interviews</a></div><div></div></div>
+</main>
+</body>
+</html>

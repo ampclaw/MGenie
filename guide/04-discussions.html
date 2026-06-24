@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapter 4: Discussions - MGenie Guide</title>
+<style>
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	background: #0d1117;
+	color: #c9d1d9;
+	display: flex;
+	min-height: 100vh;
+}
+#sidebar {
+	width: 280px;
+	min-width: 280px;
+	background: #1a1a2e;
+	padding: 24px 0;
+	position: fixed;
+	top: 0; left: 0;
+	height: 100vh;
+	overflow-y: auto;
+	z-index: 100;
+	box-shadow: 2px 0 8px rgba(0,0,0,.5);
+	font-family: system-ui, sans-serif;
+}
+#sidebar h2 {
+	color: #e6edf3;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	padding: 0 24px 16px;
+	border-bottom: 1px solid #30363d;
+	margin: 0 0 8px;
+}
+#sidebar a {
+	display: block;
+	padding: 9px 24px;
+	color: #c9d1d9;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 1.5;
+	transition: all .15s;
+}
+#sidebar a:hover { background: rgba(255,255,255,.06); color: #fff; }
+#sidebar a.active {
+	background: #0d1117;
+	color: #58a6ff;
+	border-left: 3px solid #58a6ff;
+	padding-left: 21px;
+	font-weight: 600;
+}
+.chapter-num { font-size: 10px; color: #6e7681; margin-right: 5px; }
+#content { margin-left: 280px; padding: 48px 64px; max-width: 860px; line-height: 1.8; }
+h1 { color: #e6edf3; font-size: 2rem; border-bottom: 2px solid #30363d; padding-bottom: 12px; margin-top: 0; }
+h2 { color: #e6edf3; font-size: 1.4rem; margin-top: 40px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+h3 { color: #e6edf3; font-size: 1.1rem; margin-top: 28px; }
+h4, h5 { color: #e6edf3; margin-top: 20px; }
+a { color: #58a6ff; }
+p { margin: 0 0 16px; }
+code { background: #161b22; color: #79c0ff; padding: 2px 7px; border-radius: 4px; font-family: "SF Mono",Monaco,Consolas,monospace; font-size: .87em; }
+pre { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px 24px; overflow-x: auto; margin: 20px 0; }
+pre code { background: none; padding: 0; color: #e6edf3; font-size: .84em; white-space: pre; }
+blockquote { border-left: 4px solid #3fb950; margin: 20px 0; padding: 12px 20px; background: rgba(63,185,80,.06); border-radius: 0 6px 6px 0; }
+table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: .92em; }
+th { background: #161b22; color: #e6edf3; padding: 10px 16px; text-align: left; border: 1px solid #30363d; font-weight: 600; }
+td { padding: 9px 16px; border: 1px solid #30363d; }
+tr:nth-child(even) { background: rgba(255,255,255,.025); }
+hr { border: none; border-top: 1px solid #30363d; margin: 32px 0; }
+ul, ol { padding-left: 24px; margin: 0 0 16px; }
+li { margin-bottom: 6px; }
+.nav-footer { display: flex; justify-content: space-between; margin-top: 64px; padding-top: 24px; border-top: 1px solid #30363d; }
+.nav-footer a { background: #161b22; color: #79c0ff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: .9em; border: 1px solid #30363d; }
+.nav-footer a:hover { background: #0d1117; border-color: #58a6ff; }
+@media (max-width: 768px) { #sidebar { display: none; } #content { margin-left: 0; padding: 24px; } }
+</style>
+</head>
+<body>
+<div id="sidebar">
+	<h2>MGenie User Guide</h2>
+		<a href="00-introduction.html" class=""><span class="chapter-num">00</span> MGenie User Guide</a>
+		<a href="01-scrum-standup.html" class=""><span class="chapter-num">01</span> Chapter 1: Scrum Standup Meetings</a>
+		<a href="02-team-meetings.html" class=""><span class="chapter-num">02</span> Chapter 2: Team Meetings</a>
+		<a href="03-presentations.html" class=""><span class="chapter-num">03</span> Chapter 3: Presentations</a>
+		<a href="04-discussions.html" class="active"><span class="chapter-num">04</span> Chapter 4: Discussions</a>
+		<a href="05-interviews.html" class=""><span class="chapter-num">05</span> Chapter 5: Interviews</a>
+		<a href="06-knowledge-base.html" class=""><span class="chapter-num">06</span> Chapter 6: Knowledge Base Building</a>
+</div>
+<main id="content">
+<h1>Chapter 4: Discussions</h1>
+<h2>Overview</h2>
+<p>Discussions, debates, brainstorming sessions, and Q&amp;A panels are fundamentally different from scripted presentations. The content is reactive. You cannot predict what will be said, what questions will arise, or where the conversation will go. You need key points ready, but you also need the flexibility to respond, redirect, and improvise.</p>
+<p>For this format, a fully scripted prompter is the wrong tool. Instead, MGenie is used differently: as a bullet-point anchor, a live transcription capture system, and an on-demand AI response generator.</p>
+<hr />
+<h2>Using Bullet-Point Scripts for Flexible Navigation</h2>
+<p>Instead of a full narrative script, write a discussion prompt file: a structured list of talking points, questions to raise, and positions to defend. Each bullet represents a concept you want to touch on, not a sentence to read verbatim.</p>
+<h3>Example Discussion Prompt File</h3>
+<pre><code>TOPIC: Should the team adopt a microservices architecture?
+
+[OPENING POSITION]
+- Microservices offer independent deployment
+- Better fault isolation per service
+- Enables team autonomy at scale
+- Counter: higher operational complexity
+- Counter: network overhead between services
+
+[KEY ARGUMENTS FOR]
+- Teams deploying independently reduces bottlenecks
+- Technology stack flexibility per service
+- Fine-grained scaling of only the services under load
+
+[KEY ARGUMENTS AGAINST]
+- Distributed systems debugging is significantly harder
+- Requires mature DevOps practices to manage
+- Latency costs for synchronous service calls
+
+[OPEN QUESTIONS TO RAISE]
+- What is the team current DevOps maturity?
+- Do we have the tooling for service mesh and observability?
+- Is our traffic pattern actually heterogeneous enough?
+
+[FALLBACK POSITION]
+- Modular monolith as intermediate step
+- Extract services only when a module reaches deployment friction
+</code></pre>
+<p>With this as your prompter content, you can navigate to any talking point using the scroll controls, reference your prepared arguments, and keep the discussion anchored to the core topic.</p>
+<hr />
+<h2>The Answer Button</h2>
+<p>The AI Answer button is the most powerful MGenie feature for discussions. It analyzes the recent transcript and generates a contextual response to the last question or statement in the conversation.</p>
+<p><strong>How it works</strong>:</p>
+<ol>
+<li>Someone asks you a question or makes a statement you want to respond to</li>
+<li>The live transcription captures what they said</li>
+<li>You press the AI Answer button (or use the keyboard shortcut)</li>
+<li>MGenie analyzes the transcript context and your loaded context files</li>
+<li>A suggested response appears, which you can read, adapt, or use as inspiration</li>
+</ol>
+<p><strong>When to use AI Answer</strong>:</p>
+<ul>
+<li>When asked a question you did not specifically prepare for</li>
+<li>When you need a moment to formulate a response</li>
+<li>When referencing previous meeting context (if you loaded context files)</li>
+<li>When the discussion touches on technical details you want to cite accurately</li>
+</ul>
+<p><strong>What AI Answer is not</strong>: It is not a script generator to read verbatim. It is a thinking aid. Use it to spark your response, then deliver in your own words.</p>
+<hr />
+<h2>Live Transcription for Capturing Discussion Points</h2>
+<p>During a discussion or brainstorm, important ideas emerge rapidly and in no particular order. Live transcription captures everything. This serves several purposes:</p>
+<ul>
+<li><strong>Real-time review</strong>: You can scroll back in the transcript to check what was said earlier</li>
+<li><strong>Post-discussion analysis</strong>: Use AI Summary to extract the key themes from a brainstorm</li>
+<li><strong>Attribution</strong>: The transcript records who contributed which idea (if you note names)</li>
+<li><strong>Follow-up</strong>: Export to Knowledge Base for a permanent record</li>
+</ul>
+<p>For facilitated brainstorming sessions, consider starting a New Session for each major theme or question. This keeps the AI Summary focused and produces separate Knowledge Base entries per topic.</p>
+<hr />
+<h2>Discussion Loop Diagram</h2>
+<pre><code>+------------------------------------------------------+
+| DISCUSSION LOOP |
++------------------------------------------------------+
+| |
+| SPEAK LISTEN |
+| (reference (someone |
+| prompter for asks a |
+| key points) question) |
+| | | |
+| v v |
+| TRANSCRIBE AI ANSWER |
+| (live capture (press button, |
+| all discussion) get response |
+| | suggestion) |
+| v | |
+| AI SUMMARY SPEAK AGAIN |
+| (end of session, (use AI suggestion |
+| extract key points) as inspiration) |
+| |
++------------------------------------------------------+
+</code></pre>
+<hr />
+<h2>Navigating Between Talking Points</h2>
+<p>During a discussion, you need to move through your talking points in a non-linear way. Use these controls:</p>
+<p><strong>Scroll Back</strong>: Jump to a previous talking point or argument. Useful when someone circles back to an earlier topic.</p>
+<p><strong>Scroll Forward</strong>: Skip ahead to a talking point that is now more relevant given the discussion flow.</p>
+<p><strong>Reset</strong>: Return to the top of your discussion script. Useful at the start of each major sub-topic.</p>
+<p><strong>Manual position</strong>: Click within the script to jump to any section instantly.</p>
+<p>The combination of a well-structured bullet-point script and flexible navigation means you always have the right talking point visible when you need it.</p>
+<hr />
+<h2>Voice Activation for Hands-Free Operation</h2>
+<p>In discussions, your hands may be busy: taking notes, using a whiteboard, or gesturing. Voice activation scrolls the prompter automatically as you speak, so you never need to touch the keyboard.</p>
+<p>For discussions, configure voice activation with a slightly higher threshold than for presentations. Discussions have more ambient conversation (other speakers), and you do not want the prompter scrolling while someone else is talking.</p>
+<p><strong>Recommended settings for discussions</strong>:</p>
+<ul>
+<li>Voice activation: enabled</li>
+<li>Threshold: medium-high (reduce scroll during ambient conversation)</li>
+<li>Scroll speed: slow (you need time to read and think between points)</li>
+<li>Auto-pause on silence: short delay (2-3 seconds, to handle natural pauses)</li>
+</ul>
+<hr />
+<h2>Step-by-Step Setup for Discussions</h2>
+<p><strong>Step 1 - Write your talking points script</strong></p>
+<p>Open <strong>Settings &gt; Script</strong> and write your discussion prompt file. Organize it by topic with clear headers. Include your key arguments, counterarguments, and questions to raise.</p>
+<p><strong>Step 2 - Load context files</strong></p>
+<p>In <strong>Settings &gt; Context</strong>, add any relevant context files: previous meeting transcripts, research documents, or your team wiki. These feed into AI Answer, making the responses more informed and specific to your situation.</p>
+<p><strong>Step 3 - Enable recording</strong></p>
+<p>Start recording at the beginning of the discussion. The live transcription is what powers AI Answer. Without a transcript, AI Answer has no context to work from.</p>
+<p><strong>Step 4 - Navigate using scroll controls</strong></p>
+<p>As the discussion progresses, scroll through your talking points. There is no need to follow the script linearly. Jump to whatever is most relevant.</p>
+<p><strong>Step 5 - Use AI Answer for unexpected questions</strong></p>
+<p>When faced with a question you did not prepare for, press the AI Answer button. Read the suggestion, adapt it to your style, and respond. This adds about 5-10 seconds to your response time, which is entirely acceptable in a discussion format.</p>
+<p><strong>Step 6 - Run AI Summary at close</strong></p>
+<p>At the end of the discussion, run AI Summary to extract the key themes, decisions, and open questions. Export to the Knowledge Base.</p>
+<hr />
+<h2>Pro Tips for Discussions</h2>
+<p><strong>Write more talking points than you will use</strong></p>
+<p>In a 60-minute discussion, you may only cover half of your prepared talking points. This is fine. Having more prepared than needed means you never run out of material, and you can choose the most relevant points based on where the conversation goes.</p>
+<p><strong>Use the transcript as a shared document</strong></p>
+<p>For group brainstorming, share your screen showing the transcript area (not the prompter). Participants can see that their ideas are being captured, which increases engagement and reduces repetition.</p>
+<p><strong>Combine AI Answer with context files for expert-level responses</strong></p>
+<p>If you load relevant documentation (API specs, research papers, previous project retrospectives) as context files before a technical discussion, AI Answer draws on that material to generate responses that are specific and well-informed rather than generic.</p>
+<p><strong>Bracket ideas for action items</strong></p>
+<p>In your talking points script, use <code>[ACTION]</code> brackets to flag anything that is likely to generate an action item. This makes it easier to identify them when reviewing the AI Summary later.</p>
+<hr />
+<p><em>Previous: Chapter 3 - Presentations | Next: Chapter 5 - Interviews</em></p>
+<div class="nav-footer"><div><a href="03-presentations.html">&larr; Chapter 3: Presentations</a></div><div><a href="05-interviews.html">Chapter 5: Interviews &rarr;</a></div></div>
+</main>
+</body>
+</html>

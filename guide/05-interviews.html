@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapter 5: Interviews - MGenie Guide</title>
+<style>
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	background: #0d1117;
+	color: #c9d1d9;
+	display: flex;
+	min-height: 100vh;
+}
+#sidebar {
+	width: 280px;
+	min-width: 280px;
+	background: #1a1a2e;
+	padding: 24px 0;
+	position: fixed;
+	top: 0; left: 0;
+	height: 100vh;
+	overflow-y: auto;
+	z-index: 100;
+	box-shadow: 2px 0 8px rgba(0,0,0,.5);
+	font-family: system-ui, sans-serif;
+}
+#sidebar h2 {
+	color: #e6edf3;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	padding: 0 24px 16px;
+	border-bottom: 1px solid #30363d;
+	margin: 0 0 8px;
+}
+#sidebar a {
+	display: block;
+	padding: 9px 24px;
+	color: #c9d1d9;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 1.5;
+	transition: all .15s;
+}
+#sidebar a:hover { background: rgba(255,255,255,.06); color: #fff; }
+#sidebar a.active {
+	background: #0d1117;
+	color: #58a6ff;
+	border-left: 3px solid #58a6ff;
+	padding-left: 21px;
+	font-weight: 600;
+}
+.chapter-num { font-size: 10px; color: #6e7681; margin-right: 5px; }
+#content { margin-left: 280px; padding: 48px 64px; max-width: 860px; line-height: 1.8; }
+h1 { color: #e6edf3; font-size: 2rem; border-bottom: 2px solid #30363d; padding-bottom: 12px; margin-top: 0; }
+h2 { color: #e6edf3; font-size: 1.4rem; margin-top: 40px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+h3 { color: #e6edf3; font-size: 1.1rem; margin-top: 28px; }
+h4, h5 { color: #e6edf3; margin-top: 20px; }
+a { color: #58a6ff; }
+p { margin: 0 0 16px; }
+code { background: #161b22; color: #79c0ff; padding: 2px 7px; border-radius: 4px; font-family: "SF Mono",Monaco,Consolas,monospace; font-size: .87em; }
+pre { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px 24px; overflow-x: auto; margin: 20px 0; }
+pre code { background: none; padding: 0; color: #e6edf3; font-size: .84em; white-space: pre; }
+blockquote { border-left: 4px solid #3fb950; margin: 20px 0; padding: 12px 20px; background: rgba(63,185,80,.06); border-radius: 0 6px 6px 0; }
+table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: .92em; }
+th { background: #161b22; color: #e6edf3; padding: 10px 16px; text-align: left; border: 1px solid #30363d; font-weight: 600; }
+td { padding: 9px 16px; border: 1px solid #30363d; }
+tr:nth-child(even) { background: rgba(255,255,255,.025); }
+hr { border: none; border-top: 1px solid #30363d; margin: 32px 0; }
+ul, ol { padding-left: 24px; margin: 0 0 16px; }
+li { margin-bottom: 6px; }
+.nav-footer { display: flex; justify-content: space-between; margin-top: 64px; padding-top: 24px; border-top: 1px solid #30363d; }
+.nav-footer a { background: #161b22; color: #79c0ff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: .9em; border: 1px solid #30363d; }
+.nav-footer a:hover { background: #0d1117; border-color: #58a6ff; }
+@media (max-width: 768px) { #sidebar { display: none; } #content { margin-left: 0; padding: 24px; } }
+</style>
+</head>
+<body>
+<div id="sidebar">
+	<h2>MGenie User Guide</h2>
+		<a href="00-introduction.html" class=""><span class="chapter-num">00</span> MGenie User Guide</a>
+		<a href="01-scrum-standup.html" class=""><span class="chapter-num">01</span> Chapter 1: Scrum Standup Meetings</a>
+		<a href="02-team-meetings.html" class=""><span class="chapter-num">02</span> Chapter 2: Team Meetings</a>
+		<a href="03-presentations.html" class=""><span class="chapter-num">03</span> Chapter 3: Presentations</a>
+		<a href="04-discussions.html" class=""><span class="chapter-num">04</span> Chapter 4: Discussions</a>
+		<a href="05-interviews.html" class="active"><span class="chapter-num">05</span> Chapter 5: Interviews</a>
+		<a href="06-knowledge-base.html" class=""><span class="chapter-num">06</span> Chapter 6: Knowledge Base Building</a>
+</div>
+<main id="content">
+<h1>Chapter 5: Interviews</h1>
+<h2>Overview</h2>
+<p>Interviews require a unique combination of preparation and apparent spontaneity. Whether you are interviewing for a job, being interviewed by a journalist, hosting a podcast, or pitching to a potential client, you need to appear natural and confident while delivering precise, well-considered answers.</p>
+<p>The challenge is that preparation and naturalness are in tension. Over-prepare and you sound scripted. Under-prepare and you miss key points, stumble on difficult questions, or fail to communicate your value clearly.</p>
+<p>MGenie resolves this tension by giving you a prepared script that you read, not memorize. Your delivery stays natural because you are not searching for words. Your content stays accurate because you prepared it carefully.</p>
+<hr />
+<h2>Interview Types and Script Approaches</h2>
+<p>Different interview formats require different scripting strategies.</p>
+<h3>Job Interview</h3>
+<p><strong>Challenge</strong>: Structured questions, need to demonstrate competency, competitive stakes.</p>
+<p><strong>Script approach</strong>: Prepare full responses to the top 20 most common questions for your role. Include specific examples using the STAR format (Situation, Task, Action, Result). Each answer should be 90-120 seconds when delivered.</p>
+<h3>Media Interview / Podcast</h3>
+<p><strong>Challenge</strong>: Conversational format, unexpected follow-ups, need to stay on message.</p>
+<p><strong>Script approach</strong>: Prepare three to five key messages you want to communicate regardless of what is asked. Write brief talking points rather than full answers. Use AI Answer for unexpected directions.</p>
+<h3>Client / Sales Call</h3>
+<p><strong>Challenge</strong>: Discovery questions, objections, need to tailor messaging in real time.</p>
+<p><strong>Script approach</strong>: Write a discovery script with prepared questions. Include objection-handling talking points. Use AI Answer when clients raise issues you have not specifically prepared for.</p>
+<h3>Technical Interview</h3>
+<p><strong>Challenge</strong>: Problem-solving under pressure, whiteboard or coding questions, system design.</p>
+<p><strong>Script approach</strong>: Prepare introductory and closing scripts. Write talking points for behavioral questions. For technical questions, use AI Answer sparingly to recall specific details (library APIs, performance characteristics, etc.).</p>
+<hr />
+<h2>Interview Preparation Workflow</h2>
+<pre><code>+------------------------------------------+
+| INTERVIEW PREPARATION |
++------------------------------------------+
+| |
+| RESEARCH |
+| - Company background and recent news |
+| - Role requirements and key skills |
+| - Common questions for this role type |
+| | |
+| v |
+| WRITE SCRIPT |
+| - Introduction (30 sec) |
+| - Core answers to expected questions |
+| - Three key messages to land |
+| - Closing questions to ask |
+| | |
+| v |
+| REHEARSE WITH TTS |
+| - Play back each answer |
+| - Check timing and pacing |
+| - Identify answers that sound weak |
+| | |
+| v |
+| LOAD CONTEXT FILES |
+| - Job description as context file |
+| - Company overview document |
+| - Your resume / portfolio |
+| |
++------------------------------------------+
+
++------------------------------------------+
+| LIVE INTERVIEW |
++------------------------------------------+
+| |
+| OPEN MGenie |
+| - Set to semi-transparent |
+| - Position near camera |
+| - Start recording for self-review |
+| | |
+| v |
+| NAVIGATE SCRIPT |
+| - Read prepared answers naturally |
+| - Use voice activation for scrolling |
+| - Stage directions for pacing reminders |
+| | |
+| v |
+| AI ANSWER FOR SURPRISES |
+| - Unexpected question arrives |
+| - Brief pause (natural in interview) |
+| - Press AI Answer |
+| - Deliver response in your own words |
+| | |
+| v |
+| REVIEW AFTER |
+| - Play back recording |
+| - AI Summary for coaching notes |
+| - Export to KB for future preparation |
+| |
++------------------------------------------+
+</code></pre>
+<hr />
+<h2>TTS Rehearsal for Interview Preparation</h2>
+<p>TTS rehearsal is exceptionally valuable for interview preparation because it forces you to hear your answers as someone else hears them.</p>
+<p><strong>What to listen for</strong>:</p>
+<ul>
+<li><strong>Timing</strong>: Is the answer too long (over 2 minutes) or too short (under 30 seconds)?</li>
+<li><strong>Clarity</strong>: Does the answer get to the point quickly, or does it bury the main message?</li>
+<li><strong>Specificity</strong>: Does the answer include concrete examples, or does it stay abstract?</li>
+<li><strong>Energy</strong>: Does the answer sound enthusiastic and confident, or flat and rehearsed?</li>
+<li><strong>Jargon</strong>: Does the answer use too much technical jargon for a non-technical interviewer?</li>
+</ul>
+<p><strong>Iteration process</strong>:</p>
+<ol>
+<li>Play TTS for an answer</li>
+<li>Note issues (too long, weak opening, missing example)</li>
+<li>Edit the script</li>
+<li>Play TTS again</li>
+<li>Repeat until the answer sounds the way you want to sound in the actual interview</li>
+</ol>
+<p>After three or four TTS passes, the answer is usually well-polished. On the day of the interview, a final TTS run refreshes your familiarity with the content.</p>
+<hr />
+<h2>Using Stage Directions for Interview Pacing</h2>
+<p>Interviews are high-stress environments where pacing breaks down. You speak faster, you fill silence, you rush through key points. Stage directions in your script act as behavioral anchors.</p>
+<p>Recommended interview stage directions:</p>
+<table>
+<thead>
+<tr>
+<th>Direction</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[PAUSE 2s]</code></td>
+<td>After a complex answer, let the point land</td>
+</tr>
+<tr>
+<td><code>[SLOW DOWN]</code></td>
+<td>When you notice yourself rushing</td>
+</tr>
+<tr>
+<td><code>[BREATHE]</code></td>
+<td>Before a difficult question answer</td>
+</tr>
+<tr>
+<td><code>[SMILE]</code></td>
+<td>Reminder to maintain warmth and engagement</td>
+</tr>
+<tr>
+<td><code>[EYE CONTACT]</code></td>
+<td>Look up from the script at the interviewer</td>
+</tr>
+<tr>
+<td><code>[CHECK TIME]</code></td>
+<td>Keep awareness of total interview duration</td>
+</tr>
+<tr>
+<td><code>[TRANSITION]</code></td>
+<td>Moving from one part of an answer to another</td>
+</tr>
+<tr>
+<td><code>[ASK QUESTION]</code></td>
+<td>Reminder to ask one of your prepared questions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>The AI Answer Feature in Interviews</h2>
+<p>The AI Answer feature is a critical tool for live interviews when an unexpected question arises.</p>
+<p><strong>Protocol for using AI Answer in interviews</strong>:</p>
+<ol>
+<li>Interviewer asks an unexpected question</li>
+<li>Say: "That is a great question. Let me think about that for a moment."</li>
+<li>Quickly press the AI Answer button</li>
+<li>Read the suggested response (takes 2-4 seconds)</li>
+<li>Begin your answer, using the suggestion as a starting point</li>
+</ol>
+<p>The 3-5 second pause is entirely natural in an interview context. Interviewers expect candidates to think before answering.</p>
+<p><strong>Context files make AI Answer more powerful</strong>: If you have loaded your resume, the job description, and relevant portfolio documents as context files, AI Answer draws on all of that information when generating suggestions. The responses are specific to your background and the role, not generic.</p>
+<p><strong>For technical interviews</strong>: Load relevant documentation (framework docs, API references, system design patterns) as context files. AI Answer can recall specific technical details that are hard to memorize.</p>
+<hr />
+<h2>Step-by-Step Setup for Interviews</h2>
+<p><strong>Step 1 - Research and write the script (2-3 days before)</strong></p>
+<p>Research the company, role, and common questions. Write full answers to the 15-20 most likely questions. Include at least one specific example per answer. Write your 30-second introduction and your closing questions.</p>
+<p><strong>Step 2 - TTS rehearsal (1-2 days before)</strong></p>
+<p>Run TTS on every answer. Fix issues. Time each answer. A complete run of all prepared answers should take 20-30 minutes.</p>
+<p><strong>Step 3 - Load context files</strong></p>
+<p>In <strong>Settings &gt; Context</strong>, add:
+- Your resume or CV (PDF or text)
+- The job description
+- Any relevant portfolio documents
+- Company overview or recent press release</p>
+<p>These become available to AI Answer during the interview.</p>
+<p><strong>Step 4 - Final TTS run (morning of interview)</strong></p>
+<p>Do a 10-minute TTS run covering your introduction and your top five answers. This refreshes the content in your working memory without over-rehearsal.</p>
+<p><strong>Step 5 - Configure MGenie for interview mode</strong></p>
+<ul>
+<li>Set font size to 28-32pt (readable at a quick glance)</li>
+<li>Enable semi-transparent background</li>
+<li>Position the window at the top of the screen near your camera</li>
+<li>Enable recording for self-review</li>
+<li>Disable voice activation (you want manual scroll control in interviews)</li>
+</ul>
+<p><strong>Step 6 - During the interview</strong></p>
+<p>Follow your script for prepared questions. Use Back and Forward buttons to navigate. Use AI Answer for unexpected questions. Remember the stage direction cues.</p>
+<p><strong>Step 7 - Post-interview review</strong></p>
+<p>Play back the recording. Run AI Summary to generate coaching notes. Review which answers felt strong and which felt weak. Update the script for future interviews.</p>
+<hr />
+<h2>Interview Script Templates</h2>
+<h3>Template 1: Technical Software Engineer Interview</h3>
+<pre><code>[TECHNICAL INTERVIEW SCRIPT]
+[ROLE: Senior Software Engineer]
+[DATE: 2024-01-15]
+
+Introduction (30 sec)
+
+Thank you for having me. I am a software engineer with seven
+years of experience building distributed systems and APIs.
+Most recently I led the backend architecture for a payment
+platform that processed two million transactions per day.
+I am excited to discuss how my background fits this role.
+
+[BREATHE]
+
+Tell Me About Yourself (2 min)
+
+I started my career as a backend engineer at a fintech
+startup, where I got deep experience with high-throughput
+systems and database optimization. After three years, I
+moved to a larger company to lead a team of five engineers
+on a microservices migration project.
+
+The project taught me a lot about the tradeoffs in
+distributed systems: deployment independence is valuable,
+but operational complexity is real. I became an advocate
+for modular design that migrates to services only when
+the organizational and operational readiness is there.
+
+[PAUSE 2s]
+
+I am looking for a role where I can both build and mentor,
+working on technically interesting problems with a team
+that cares about code quality and engineering culture.
+
+Why This Company (1 min)
+
+I have been following your work on the observability
+platform for two years. The technical blog posts from
+your infrastructure team demonstrate exactly the kind
+of principled engineering thinking I want to be part of.
+
+Your recent post on adaptive sampling in distributed
+tracing was particularly interesting. I had been working
+on a similar problem and your approach was elegant.
+
+[BREATHE]
+
+Tell Me About a Technical Challenge (2 min)
+
+Situation: We had a payment processing service that was
+causing cascading failures during peak load. Latency
+spikes in one service were propagating across the system.
+
+Task: I was asked to diagnose the root cause and propose
+a solution within 48 hours, because a major partner was
+launching the next week.
+
+Action: I used distributed tracing to identify that a
+database connection pool was being exhausted under load.
+The fix was a combination of connection pool tuning,
+circuit breaker implementation, and a retry budget that
+prevented retry storms from amplifying the problem.
+
+Result: Latency normalized. The partner launch went
+smooth. We also built a runbook that helped the on-call
+team detect similar issues earlier in the future.
+
+[PAUSE 2s]
+
+Questions to Ask
+
+[ASK QUESTION: engineering culture and code review process]
+[ASK QUESTION: biggest technical challenge the team faces]
+[ASK QUESTION: how engineering decisions are made]
+</code></pre>
+<h3>Template 2: Podcast / Media Interview</h3>
+<pre><code>[PODCAST INTERVIEW SCRIPT]
+[SHOW: The Engineering Leadership Podcast]
+[DATE: 2024-01-15]
+
+Key Messages (anchor to these regardless of questions)
+
+1. Remote teams need better async communication tools
+2. AI can augment human judgment but should not replace it
+3. The best engineering leaders are also teachers
+
+Opening Hook
+
+Three years ago, I was running a team of 12 engineers
+across four time zones and losing an hour a day to
+meeting coordination. That frustration became the
+problem I spent the next two years solving.
+
+[PAUSE]
+
+On Remote Work Challenges
+
+The core problem is not the timezone difference.
+It is the loss of ambient awareness: knowing what
+your teammates are working on without scheduling a
+call to find out.
+
+Asynchronous updates help, but most teams do not
+have good tooling for structured async communication.
+This is where I see the biggest opportunity.
+
+[TRANSITION]
+
+On AI in Engineering
+
+I have a nuanced view here. AI tools dramatically
+increase individual productivity. But they also create
+new risks: over-reliance, degradation of fundamentals,
+and the illusion of understanding.
+
+The teams that will use AI best are the ones that
+combine it with strong fundamentals and peer review.
+
+[TRANSITION]
+
+Closing
+
+For anyone building distributed teams: invest in your
+communication practices before your tooling. The tools
+are useless without the underlying habits.
+
+[PAUSE]
+
+Thank you for having me on the show.
+</code></pre>
+<hr />
+<h2>Pro Tips for Interviews</h2>
+<p><strong>Write answers in your own voice</strong></p>
+<p>If the script sounds like a formal document, it will sound that way when you read it. Write the script using the words you would naturally say. If you would not say "leverage core competencies" in normal conversation, do not write it.</p>
+<p><strong>Prepare one great story per answer</strong></p>
+<p>The best interview answers are specific stories, not general descriptions of skills. For every question type ("Tell me about a time..."), have a prepared story with a clear situation, action, and result.</p>
+<p><strong>Use TTS to catch accidental jargon</strong></p>
+<p>When you hear your answer played back, jargon that seemed fine when writing it often sounds alienating. Simplify aggressively.</p>
+<p><strong>Record and review</strong></p>
+<p>A recording of a mock interview (or a real one) is the most useful feedback tool available. The recording shows you exactly how you come across, which is often very different from how you imagine you come across.</p>
+<hr />
+<p><em>Previous: Chapter 4 - Discussions | Next: Chapter 6 - Knowledge Base</em></p>
+<div class="nav-footer"><div><a href="04-discussions.html">&larr; Chapter 4: Discussions</a></div><div><a href="06-knowledge-base.html">Chapter 6: Knowledge Base Building &rarr;</a></div></div>
+</main>
+</body>
+</html>
