@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Installation — MGenie</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .doc-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .doc-container h1 {
+      font-size: 2.2rem;
+      color: #e6edf3;
+      margin-bottom: 8px;
+    }
+    .breadcrumb {
+      color: #6e7681;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    .breadcrumb a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+    .step {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 24px;
+      margin: 20px 0;
+    }
+    .step h3 {
+      margin: 0 0 12px;
+      color: #58a6ff;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    .step-title {
+      color: #e6edf3;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .step p {
+      margin: 0 0 12px;
+      color: #8b949e;
+      font-size: 0.95rem;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #238636;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background .15s;
+      margin-top: 8px;
+    }
+    .download-btn:hover {
+      background: #2ea043;
+    }
+    .release-info {
+      background: rgba(88,166,255,.05);
+      border: 1px solid rgba(88,166,255,.2);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 20px 0;
+      font-size: 13px;
+      color: #8b949e;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">M<span>Genie</span></a>
+  <div class="nav-links">
+    <a href="/guide/">User Guide</a>
+    <a href="/docs/">Documentation</a>
+    <a href="https://github.com/ampclaw/MGenie">GitHub</a>
+  </div>
+</nav>
+
+<div class="doc-container">
+  <div class="breadcrumb">
+    <a href="/">Home</a> / <a href="/docs/">Docs</a> / Installation
+  </div>
+  
+  <h1>Installation</h1>
+  <p style="color: #8b949e; font-size: 1.1rem; margin-bottom: 32px;">Download and install MGenie on your Mac in seconds.</p>
+
+  <div class="step">
+    <h3>Step 1</h3>
+    <div class="step-title">Download MGenie</div>
+    <p>Click the button below to download the latest release for your Mac:</p>
+    <a href="https://github.com/ampclaw/MGenie/releases/latest/download/MGenie.dmg" class="download-btn">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M7.47 10.78a.75.75 0 0 0 1.06 0l3.75-3.75a.75.75 0 0 0-1.06-1.06L8.75 8.44V1.75a.75.75 0 0 0-1.5 0v6.69L4.78 5.97a.75.75 0 0 0-1.06 1.06l3.75 3.75ZM3.75 13a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z"/>
+      </svg>
+      Download MGenie.dmg
+    </a>
+    <div class="release-info">
+      ℹ️ Works on macOS 13+ · Apple Silicon & Intel · Free download
+    </div>
+  </div>
+
+  <div class="step">
+    <h3>Step 2</h3>
+    <div class="step-title">Open the Installer</div>
+    <p>Your browser should download <code>MGenie.dmg</code>. Open it from your Downloads folder. You'll see the MGenie icon and an Applications folder.</p>
+  </div>
+
+  <div class="step">
+    <h3>Step 3</h3>
+    <div class="step-title">Drag to Applications</div>
+    <p>Drag the MGenie app icon into the Applications folder. You can also just double-click the app icon to launch it directly from the .dmg.</p>
+  </div>
+
+  <div class="step">
+    <h3>Step 4</h3>
+    <div class="step-title">Verify & Launch</div>
+    <p>Navigate to your Applications folder and double-click MGenie to launch it. On first launch, macOS may ask for permission — click <strong>Open</strong>.</p>
+    <div class="release-info">
+      ✅ You may see a notification about an unidentified developer. Click <strong>Open</strong> to trust the app. You only need to do this once.
+    </div>
+  </div>
+
+  <h2>Permissions</h2>
+  <p>MGenie will ask for the following permissions on first use:</p>
+  <ul>
+    <li><strong>Microphone:</strong> For recording and transcription</li>
+    <li><strong>Speech Recognition:</strong> For live-to-text</li>
+    <li><strong>Accessibility (optional):</strong> Only for global keyboard shortcuts</li>
+  </ul>
+  <p style="color: #8b949e; font-size: 0.95rem;">You can grant or deny these in <strong>System Settings → Privacy & Security</strong> at any time.</p>
+
+  <h2>Updates</h2>
+  <p>MGenie checks for updates automatically. When a new version is available, you'll see a notification in the menu bar. Download and run the new .dmg to update.</p>
+  <p style="color: #8b949e; font-size: 0.95rem;">Or visit <a href="https://github.com/ampclaw/MGenie/releases">GitHub Releases</a> to download any version manually.</p>
+
+  <h2>Uninstall</h2>
+  <p>To uninstall MGenie, simply drag the app from Applications to Trash. All scripts and recordings are saved in <code>~/Documents/MGenie/</code> and are not removed.</p>
+
+  <div style="border-top: 1px solid #30363d; padding-top: 24px; margin-top: 48px;">
+    <a href="/docs/" style="color: #58a6ff; text-decoration: none;">← Back to Documentation</a> · 
+    <a href="/guide/" style="color: #58a6ff; text-decoration: none;">User Guide →</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 MGenie. Built for macOS.</p>
+  <p><a href="https://github.com/ampclaw/MGenie">GitHub</a> · <a href="https://github.com/ampclaw/MGenie/releases">Releases</a> · <a href="https://github.com/ampclaw/MGenie/issues">Issues</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Download — MGenie</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .download-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .download-hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .download-hero h1 {
+      font-size: 2.2rem;
+      color: #e6edf3;
+      margin-bottom: 16px;
+    }
+    .download-hero p {
+      color: #8b949e;
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+    }
+    .download-btn-large {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #238636;
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 40px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background .15s, transform .1s;
+      margin-bottom: 8px;
+    }
+    .download-btn-large:hover {
+      background: #2ea043;
+      transform: translateY(-2px);
+    }
+    .download-info {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #30363d;
+    }
+    .info-row:last-child {
+      border-bottom: none;
+    }
+    .info-label {
+      color: #8b949e;
+      font-size: 14px;
+    }
+    .info-value {
+      color: #e6edf3;
+      font-weight: 600;
+    }
+    .versions {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .versions h3 {
+      color: #e6edf3;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    .version-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #30363d;
+    }
+    .version-item:last-child {
+      border-bottom: none;
+    }
+    .version-link {
+      color: #58a6ff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .version-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">M<span>Genie</span></a>
+  <div class="nav-links">
+    <a href="/guide/">User Guide</a>
+    <a href="/docs/">Documentation</a>
+    <a href="https://github.com/ampclaw/MGenie">GitHub</a>
+  </div>
+</nav>
+
+<div class="download-container">
+  <div class="download-hero">
+    <h1>Download MGenie</h1>
+    <p>Free teleprompter app for macOS. The latest version is below.</p>
+  </div>
+
+  <div style="text-align: center; margin-bottom: 48px;">
+    <a href="https://github.com/ampclaw/MGenie/releases/latest/download/MGenie.dmg" class="download-btn-large">
+      <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M7.47 10.78a.75.75 0 0 0 1.06 0l3.75-3.75a.75.75 0 0 0-1.06-1.06L8.75 8.44V1.75a.75.75 0 0 0-1.5 0v6.69L4.78 5.97a.75.75 0 0 0-1.06 1.06l3.75 3.75ZM3.75 13a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z"/>
+      </svg>
+      Download for macOS
+    </a>
+    <div style="color: #6e7681; font-size: 13px;">
+      macOS 13+ · Universal Binary (Intel & Apple Silicon)
+    </div>
+  </div>
+
+  <div class="download-info">
+    <div class="info-row">
+      <span class="info-label">Latest Version</span>
+      <span class="info-value" id="version">Check GitHub</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">File Size</span>
+      <span class="info-value">~45 MB</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">License</span>
+      <span class="info-value">Free · Open Source</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Platform</span>
+      <span class="info-value">macOS 13+</span>
+    </div>
+  </div>
+
+  <h2>Installation</h2>
+  <ol>
+    <li>Click the <strong>Download for macOS</strong> button above</li>
+    <li>Open the downloaded <code>.dmg</code> file</li>
+    <li>Drag MGenie into the Applications folder</li>
+    <li>Launch MGenie from Applications</li>
+  </ol>
+  <p style="color: #8b949e; font-size: 14px;">
+    For detailed installation instructions, see the <a href="/docs/installation.html" style="color: #58a6ff;">Installation Guide</a>.
+  </p>
+
+  <div class="versions">
+    <h3>🔗 Other Downloads</h3>
+    <div class="version-item">
+      <span>All Releases</span>
+      <a href="https://github.com/ampclaw/MGenie/releases" class="version-link">View on GitHub →</a>
+    </div>
+    <div class="version-item">
+      <span>Release Notes</span>
+      <a href="https://github.com/ampclaw/MGenie/releases/latest" class="version-link">Latest Release →</a>
+    </div>
+    <div class="version-item">
+      <span>Build from Source</span>
+      <a href="/docs/build.html" class="version-link">View Instructions →</a>
+    </div>
+  </div>
+
+  <h2>Automatic Updates</h2>
+  <p>MGenie checks for updates automatically on launch. When a new version is available, you'll be notified in the menu bar. Simply download and run the new .dmg to update.</p>
+
+  <div style="border-top: 1px solid #30363d; padding-top: 24px; margin-top: 48px;">
+    <a href="/" style="color: #58a6ff; text-decoration: none;">← Back to Home</a> · 
+    <a href="/docs/" style="color: #58a6ff; text-decoration: none;">Documentation</a> · 
+    <a href="/feedback/" style="color: #58a6ff; text-decoration: none;">Send Feedback</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 MGenie. Built for macOS.</p>
+  <p><a href="https://github.com/ampclaw/MGenie">GitHub</a> · <a href="https://github.com/ampclaw/MGenie/releases">Releases</a> · <a href="https://github.com/ampclaw/MGenie/issues">Issues</a></p>
+</footer>
+
+</body>
+</html>
