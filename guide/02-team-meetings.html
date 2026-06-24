@@ -3,20 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chapter 2: Team Meetings - MGenie Guide</title>
-<link rel="stylesheet" href="../assets/css/guide.css">
+<title>Chapter 2: Team Meetings — MGenie Guide</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#0d1117;color:#c9d1d9}
+a{color:#58a6ff;text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:#161b22;color:#79c0ff;padding:2px 7px;border-radius:4px;font-family:"SF Mono",Consolas,monospace;font-size:.85em}
+pre{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px 24px;overflow-x:auto;margin:20px 0;line-height:1.6}
+pre code{background:none;padding:0;color:#e6edf3;font-size:.82em;white-space:pre}
+table{border-collapse:collapse;width:100%;margin:20px 0;font-family:system-ui,sans-serif;font-size:.9em}
+th{background:#161b22;color:#e6edf3;padding:10px 16px;text-align:left;border:1px solid #30363d;font-weight:600}
+td{padding:9px 16px;border:1px solid #30363d;vertical-align:top}
+tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+blockquote{border-left:4px solid #3fb950;margin:20px 0;padding:14px 20px;background:rgba(63,185,80,.06);border-radius:0 6px 6px 0}
+hr{border:none;border-top:1px solid #21262d;margin:36px 0}
+ul,ol{padding-left:28px;margin:0 0 16px}
+li{margin-bottom:7px}
+h1{color:#e6edf3;font-size:2rem;margin:0 0 8px}
+h2{color:#e6edf3;font-size:1.35rem;margin:40px 0 12px;border-bottom:1px solid #21262d;padding-bottom:8px}
+h3{color:#cdd9e5;font-size:1.08rem;margin:28px 0 10px}
+h4,h5{color:#cdd9e5;margin:20px 0 8px}
+p{margin:0 0 16px}
+strong{color:#e6edf3}
+
+body{display:flex;min-height:100vh}
+#sidebar{width:260px;min-width:260px;background:#1a1a2e;padding:20px 0 40px;position:fixed;top:0;left:0;height:100vh;overflow-y:auto;z-index:100;box-shadow:2px 0 10px rgba(0,0,0,.5);font-family:system-ui,sans-serif}
+#sidebar .brand{padding:0 20px 16px;border-bottom:1px solid #30363d;margin-bottom:10px}
+#sidebar .brand a{display:block;color:#e6edf3;font-size:13px;font-weight:700;margin:0 0 2px}
+#sidebar .brand p{color:#6e7681;font-size:11px;margin:4px 0 0}
+#sidebar a.ch{display:block;padding:7px 20px;color:#c9d1d9;font-size:12.5px;border-left:3px solid transparent;transition:all .12s;line-height:1.5}
+#sidebar a.ch:hover{background:rgba(255,255,255,.05);color:#e6edf3;text-decoration:none}
+#sidebar a.ch.active{color:#58a6ff;background:rgba(88,166,255,.08);border-left-color:#58a6ff;font-weight:600}
+.ch-num{font-size:10px;color:#484f58;margin-right:5px;font-family:monospace}
+#content{margin-left:260px;padding:56px 72px 80px;max-width:900px;width:100%;line-height:1.85}
+.nav-footer{display:flex;justify-content:space-between;margin-top:64px;padding-top:24px;border-top:1px solid #21262d}
+.nav-footer a{background:#161b22;color:#79c0ff;padding:10px 20px;border-radius:6px;font-size:.9em;border:1px solid #30363d}
+.nav-footer a:hover{background:#0d1117;border-color:#58a6ff;text-decoration:none}
+@media(max-width:800px){#sidebar{display:none}#content{margin-left:0;padding:28px 20px 60px}}
+</style>
 </head>
 <body>
-<div id="sidebar">
-	<h2>MGenie User Guide</h2>
-		<a href="00-introduction.html" class=""><span class="chapter-num">00</span> MGenie User Guide</a>
-		<a href="01-scrum-standup.html" class=""><span class="chapter-num">01</span> Chapter 1: Scrum Standup Meetings</a>
-		<a href="02-team-meetings.html" class="active"><span class="chapter-num">02</span> Chapter 2: Team Meetings</a>
-		<a href="03-presentations.html" class=""><span class="chapter-num">03</span> Chapter 3: Presentations</a>
-		<a href="04-discussions.html" class=""><span class="chapter-num">04</span> Chapter 4: Discussions</a>
-		<a href="05-interviews.html" class=""><span class="chapter-num">05</span> Chapter 5: Interviews</a>
-		<a href="06-knowledge-base.html" class=""><span class="chapter-num">06</span> Chapter 6: Knowledge Base Building</a>
-</div>
+<nav id="sidebar"><div class="brand"><a href="index.html">← MGenie</a><p>User Guide</p></div><a class="ch" href="00-introduction.html"><span class="ch-num">00</span>MGenie User Guide</a><a class="ch" href="01-scrum-standup.html"><span class="ch-num">01</span>Chapter 1: Scrum Standup Meetings</a><a class="ch active" href="02-team-meetings.html"><span class="ch-num">02</span>Chapter 2: Team Meetings</a><a class="ch" href="03-presentations.html"><span class="ch-num">03</span>Chapter 3: Presentations</a><a class="ch" href="04-discussions.html"><span class="ch-num">04</span>Chapter 4: Discussions</a><a class="ch" href="05-interviews.html"><span class="ch-num">05</span>Chapter 5: Interviews</a><a class="ch" href="06-knowledge-base.html"><span class="ch-num">06</span>Chapter 6: Knowledge Base Building</a></nav>
 <main id="content">
 <h1>Chapter 2: Team Meetings</h1>
 <h2>Overview</h2>
@@ -262,7 +291,7 @@ Thank you all. See you at standup tomorrow.
 <p>If a team member asks a question outside your prepared agenda, use the AI Answer button. It generates a response based on the transcript and any context files you have loaded.</p>
 <hr />
 <p><em>Previous: Chapter 1 - Scrum Standup | Next: Chapter 3 - Presentations</em></p>
-<div class="nav-footer"><div><a href="01-scrum-standup.html">&larr; Chapter 1: Scrum Standup Meetings</a></div><div><a href="03-presentations.html">Chapter 3: Presentations &rarr;</a></div></div>
+<div class="nav-footer"><div><a href="01-scrum-standup.html">← Chapter 1: Scrum Standup Meetings</a></div><div><a href="03-presentations.html">Chapter 3: Presentations →</a></div></div>
 </main>
 </body>
 </html>

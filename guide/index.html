@@ -1,5 +1,228 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=00-introduction.html">
-<title>MGenie User Guide</title>
-</head><body><p>Redirecting to <a href="00-introduction.html">MGenie User Guide</a></p></body></html>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MGenie — floating macOS teleprompter with TTS, recording, and AI features">
+<title>MGenie — macOS Teleprompter</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#0d1117;color:#c9d1d9}
+a{color:#58a6ff;text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:#161b22;color:#79c0ff;padding:2px 7px;border-radius:4px;font-family:"SF Mono",Consolas,monospace;font-size:.85em}
+pre{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px 24px;overflow-x:auto;margin:20px 0;line-height:1.6}
+pre code{background:none;padding:0;color:#e6edf3;font-size:.82em;white-space:pre}
+table{border-collapse:collapse;width:100%;margin:20px 0;font-family:system-ui,sans-serif;font-size:.9em}
+th{background:#161b22;color:#e6edf3;padding:10px 16px;text-align:left;border:1px solid #30363d;font-weight:600}
+td{padding:9px 16px;border:1px solid #30363d;vertical-align:top}
+tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+blockquote{border-left:4px solid #3fb950;margin:20px 0;padding:14px 20px;background:rgba(63,185,80,.06);border-radius:0 6px 6px 0}
+hr{border:none;border-top:1px solid #21262d;margin:36px 0}
+ul,ol{padding-left:28px;margin:0 0 16px}
+li{margin-bottom:7px}
+h1{color:#e6edf3;font-size:2rem;margin:0 0 8px}
+h2{color:#e6edf3;font-size:1.35rem;margin:40px 0 12px;border-bottom:1px solid #21262d;padding-bottom:8px}
+h3{color:#cdd9e5;font-size:1.08rem;margin:28px 0 10px}
+h4,h5{color:#cdd9e5;margin:20px 0 8px}
+p{margin:0 0 16px}
+strong{color:#e6edf3}
+
+body{font-family:system-ui,-apple-system,sans-serif;min-height:100vh}
+nav.top{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid #21262d;position:sticky;top:0;background:#0d1117;z-index:100}
+nav.top .logo{color:#e6edf3;font-weight:700;font-size:18px;letter-spacing:-.3px}
+nav.top .logo span{color:#58a6ff}
+nav.top .links a{color:#c9d1d9;margin-left:24px;font-size:14px}
+.hero{text-align:center;padding:80px 24px 64px;max-width:760px;margin:0 auto}
+.hero h1{font-size:3rem;color:#e6edf3;margin:0 0 16px;font-weight:800;letter-spacing:-.5px}
+.hero p{font-size:1.15rem;color:#8b949e;line-height:1.7;margin:0 0 36px}
+.btn{display:inline-block;padding:14px 32px;border-radius:8px;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .2s}
+.btn-primary{background:#1f6feb;color:#fff;border:none}
+.btn-primary:hover{background:#388bfd;text-decoration:none;color:#fff}
+.btn-secondary{background:transparent;color:#58a6ff;border:1px solid #30363d;margin-left:12px}
+.btn-secondary:hover{background:#161b22;text-decoration:none}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:0 48px 64px;max-width:1100px;margin:0 auto}
+.feature-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px}
+.feature-card .icon{font-size:28px;margin-bottom:12px}
+.feature-card h3{color:#e6edf3;margin:0 0 8px;font-size:1rem}
+.feature-card p{color:#8b949e;font-size:.88rem;margin:0;line-height:1.6}
+.pricing{padding:0 48px 80px;max-width:960px;margin:0 auto}
+.pricing h2{color:#e6edf3;font-size:1.8rem;text-align:center;margin:0 0 8px}
+.pricing .sub{color:#8b949e;text-align:center;margin:0 0 40px;font-size:.95rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.plan{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:32px;position:relative;transition:border-color .2s}
+.plan:hover{border-color:#58a6ff}
+.plan.popular{border-color:#f0883e;box-shadow:0 0 0 1px #f0883e30}
+.plan .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#f0883e;color:#0d1117;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;white-space:nowrap;text-transform:uppercase;letter-spacing:.5px}
+.plan .badge.offer{background:#3fb950}
+.plan h3{color:#e6edf3;font-size:1rem;font-weight:600;margin:0 0 16px;text-transform:uppercase;letter-spacing:.5px;font-family:system-ui}
+.plan .price{margin:0 0 4px}
+.plan .price .amount{font-size:2.4rem;font-weight:800;color:#e6edf3}
+.plan .price .period{font-size:.9rem;color:#8b949e;margin-left:4px}
+.plan .was{color:#6e7681;font-size:.85rem;margin:0 0 20px;text-decoration:line-through}
+.plan ul{list-style:none;padding:0;margin:0 0 28px}
+.plan ul li{padding:6px 0;color:#c9d1d9;font-size:.9rem;display:flex;align-items:flex-start;gap:8px;border-bottom:1px solid #21262d}
+.plan ul li:last-child{border-bottom:none}
+.plan ul li::before{content:"✓";color:#3fb950;flex-shrink:0;margin-top:1px}
+.plan ul li.no::before{content:"✕";color:#6e7681}
+.plan ul li.no{color:#6e7681}
+.plan .cta{display:block;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:.9rem;background:#21262d;color:#c9d1d9;border:1px solid #30363d;transition:all .2s}
+.plan .cta:hover{background:#30363d;text-decoration:none;color:#e6edf3}
+.plan.popular .cta{background:#f0883e;color:#0d1117;border-color:#f0883e}
+.plan.popular .cta:hover{background:#fb8f44}
+.docs-section{padding:0 48px 80px;max-width:960px;margin:0 auto}
+.docs-section h2{color:#e6edf3;font-size:1.5rem;margin:0 0 24px}
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.doc-card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px;transition:border-color .2s}
+.doc-card:hover{border-color:#58a6ff;text-decoration:none}
+.doc-card .num{font-size:10px;color:#484f58;font-family:monospace;margin-bottom:6px}
+.doc-card h4{color:#e6edf3;margin:0 0 6px;font-size:.95rem}
+.doc-card p{color:#8b949e;font-size:.82rem;margin:0;line-height:1.5}
+footer{border-top:1px solid #21262d;padding:32px 48px;display:flex;justify-content:space-between;align-items:center;color:#6e7681;font-size:.85rem}
+footer a{color:#6e7681;margin-left:20px}
+footer a:hover{color:#c9d1d9}
+@media(max-width:600px){.hero h1{font-size:2rem}.features,.pricing,.docs-section{padding-left:20px;padding-right:20px}nav.top{padding:14px 20px}.hero{padding:48px 20px 40px}footer{flex-direction:column;gap:16px;text-align:center}footer a{margin:0 10px}}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <span class="logo">M<span>Genie</span></span>
+  <div class="links">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#docs">Guide</a>
+    <a href="https://github.com/ampclaw/MGenie" target="_blank">GitHub</a>
+    <a href="https://github.com/ampclaw/MGenie/releases" class="btn btn-primary" target="_blank" style="padding:8px 18px;font-size:.85rem">Download</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Your Script,<br>Always Visible</h1>
+  <p>MGenie is a floating macOS teleprompter that lives at the top of your screen — invisible to screen sharing, always readable by you. From standups to interviews to presentations.</p>
+  <a href="https://github.com/ampclaw/MGenie/releases" class="btn btn-primary" target="_blank">Download Free</a>
+  <a href="00-introduction.html" class="btn btn-secondary">Read the Guide</a>
+</section>
+
+<!-- Features -->
+<section id="features">
+<div class="features">
+  <div class="feature-card"><div class="icon">📜</div><h3>Floating Teleprompter</h3><p>Anchors to the top of any display, invisible in screenshots and screen recordings. Drag it anywhere you need.</p></div>
+  <div class="feature-card"><div class="icon">🔊</div><h3>Text-to-Speech</h3><p>Hear your script read back with word-by-word highlighting. Use your own Personal Voice or any system voice.</p></div>
+  <div class="feature-card"><div class="icon">🎙</div><h3>Live Transcription</h3><p>Record your microphone or system audio and get a live transcript as you speak — no third-party service needed.</p></div>
+  <div class="feature-card"><div class="icon">✦</div><h3>AI Summary &amp; Answer</h3><p>One tap to get a structured summary with key points and action items, or an answer to the last question in your session.</p></div>
+</div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="pricing">
+  <h2>Simple Pricing</h2>
+  <p class="sub">Start free. Upgrade when you need AI features.</p>
+  <div class="pricing-grid">
+
+    <!-- Free -->
+    <div class="plan">
+      <h3>Free</h3>
+      <div class="price"><span class="amount">$0</span></div>
+      <div class="was">&nbsp;</div>
+      <ul>
+        <li>Floating teleprompter</li>
+        <li>Auto-scroll &amp; voice activation</li>
+        <li>Text-to-Speech playback</li>
+        <li>Recording &amp; transcription</li>
+        <li>Session export (Markdown)</li>
+        <li class="no">AI Summary</li>
+        <li class="no">AI Answer</li>
+        <li class="no">Personal Voice</li>
+      </ul>
+      <a href="https://github.com/ampclaw/MGenie/releases" class="cta" target="_blank">Download Free</a>
+    </div>
+
+    <!-- Monthly -->
+    <div class="plan">
+      <div class="badge offer">Launch Offer</div>
+      <h3>Monthly</h3>
+      <div class="price"><span class="amount">$9.99</span><span class="period">/month</span></div>
+      <div class="was">Was $19.99/month</div>
+      <ul>
+        <li>Everything in Free</li>
+        <li>AI Summary — key points &amp; actions</li>
+        <li>AI Answer — last question focus</li>
+        <li>Personal Voice TTS</li>
+        <li>All AI providers (OpenAI, Anthropic, Groq…)</li>
+      </ul>
+      <a href="https://github.com/ampclaw/MGenie/releases" class="cta" target="_blank">Get Monthly</a>
+    </div>
+
+    <!-- Annual -->
+    <div class="plan popular">
+      <div class="badge">Best Value</div>
+      <h3>Annual</h3>
+      <div class="price"><span class="amount">$99</span><span class="period">/year</span></div>
+      <div class="was">Was $199/year</div>
+      <ul>
+        <li>Everything in Monthly</li>
+        <li>2 months free vs monthly</li>
+        <li>Priority support</li>
+        <li>Early access to new features</li>
+      </ul>
+      <a href="https://github.com/ampclaw/MGenie/releases" class="cta" target="_blank">Get Annual</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Docs -->
+<section id="docs" class="docs-section">
+  <h2>Use-Case Guide</h2>
+  <div class="docs-grid">
+        <a class="doc-card" href="00-introduction.html">
+          <div class="num">00</div>
+          <h4>MGenie User Guide</h4>
+          <p>Full UI walkthrough, quick-start checklist, and keyboard shortcut reference</p>
+        </a>
+        <a class="doc-card" href="01-scrum-standup.html">
+          <div class="num">01</div>
+          <h4>Chapter 1: Scrum Standup Meetings</h4>
+          <p>Script templates, voice activation setup, and TTS rehearsal tips</p>
+        </a>
+        <a class="doc-card" href="02-team-meetings.html">
+          <div class="num">02</div>
+          <h4>Chapter 2: Team Meetings</h4>
+          <p>Agenda scripting, stage directions, and AI-powered meeting minutes</p>
+        </a>
+        <a class="doc-card" href="03-presentations.html">
+          <div class="num">03</div>
+          <h4>Chapter 3: Presentations</h4>
+          <p>Slide + teleprompter workflow, timing rehearsal, and delivery tips</p>
+        </a>
+        <a class="doc-card" href="04-discussions.html">
+          <div class="num">04</div>
+          <h4>Chapter 4: Discussions</h4>
+          <p>Bullet-point navigation, AI Answer loop, and hands-free operation</p>
+        </a>
+        <a class="doc-card" href="05-interviews.html">
+          <div class="num">05</div>
+          <h4>Chapter 5: Interviews</h4>
+          <p>Technical and podcast templates, live AI Answer protocol</p>
+        </a>
+        <a class="doc-card" href="06-knowledge-base.html">
+          <div class="num">06</div>
+          <h4>Chapter 6: Knowledge Base Building</h4>
+          <p>Full record → transcribe → summarise → export pipeline</p>
+        </a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 MGenie · <a href="https://github.com/ampclaw/MGenie" target="_blank">GitHub</a></span>
+  <div>
+    <a href="https://github.com/ampclaw/MGenie/issues/new?template=bug_report.md" target="_blank">Report a Bug</a>
+    <a href="https://github.com/ampclaw/MGenie/releases" target="_blank">Changelog</a>
+  </div>
+</footer>
+
+</body>
+</html>
